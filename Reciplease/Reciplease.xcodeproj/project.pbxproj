@@ -146,7 +146,7 @@
 		20E87A28277C799C005B3DB2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				20E879F6277C7956005B3DB2 /* Reciplease.xcdatamodeld */,
+				20E87A2A277C7C39005B3DB2 /* CoreData */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +161,14 @@
 				20E879EF277C7956005B3DB2 /* SceneDelegate.swift */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		20E87A2A277C7C39005B3DB2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				20E879F6277C7956005B3DB2 /* Reciplease.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
