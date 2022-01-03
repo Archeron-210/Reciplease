@@ -18,6 +18,8 @@
 		20E87A32277CB68F005B3DB2 /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E87A31277CB68F005B3DB2 /* IngredientsViewController.swift */; };
 		20E87A37277CB7A9005B3DB2 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E87A36277CB7A9005B3DB2 /* RecipesViewController.swift */; };
 		20E87A3C277CC33E005B3DB2 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E87A3B277CC33E005B3DB2 /* RecipeDetailViewController.swift */; };
+		20E87A4127833D28005B3DB2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E87A4027833D28005B3DB2 /* FavoritesViewController.swift */; };
+		20E87A4627833D42005B3DB2 /* FavoritesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E87A4527833D42005B3DB2 /* FavoritesDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		20E87A31277CB68F005B3DB2 /* IngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IngredientsViewController.swift; path = Reciplease/View/IngredientsViewController.swift; sourceTree = SOURCE_ROOT; };
 		20E87A36277CB7A9005B3DB2 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecipesViewController.swift; path = Reciplease/View/RecipesViewController.swift; sourceTree = SOURCE_ROOT; };
 		20E87A3B277CC33E005B3DB2 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecipeDetailViewController.swift; path = Reciplease/View/RecipeDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		20E87A4027833D28005B3DB2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = Reciplease/View/FavoritesViewController.swift; sourceTree = SOURCE_ROOT; };
+		20E87A4527833D42005B3DB2 /* FavoritesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,8 @@
 		20E87A26277C7986005B3DB2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				20E87A4027833D28005B3DB2 /* FavoritesViewController.swift */,
+				20E87A4527833D42005B3DB2 /* FavoritesDetailsViewController.swift */,
 				20E87A3B277CC33E005B3DB2 /* RecipeDetailViewController.swift */,
 				20E87A36277CB7A9005B3DB2 /* RecipesViewController.swift */,
 				20E87A31277CB68F005B3DB2 /* IngredientsViewController.swift */,
@@ -309,10 +315,12 @@
 			files = (
 				20E879F8277C7956005B3DB2 /* Reciplease.xcdatamodeld in Sources */,
 				20E87A32277CB68F005B3DB2 /* IngredientsViewController.swift in Sources */,
+				20E87A4127833D28005B3DB2 /* FavoritesViewController.swift in Sources */,
 				20E879EE277C7956005B3DB2 /* AppDelegate.swift in Sources */,
 				20E87A37277CB7A9005B3DB2 /* RecipesViewController.swift in Sources */,
 				20E87A3C277CC33E005B3DB2 /* RecipeDetailViewController.swift in Sources */,
 				20E879F0277C7956005B3DB2 /* SceneDelegate.swift in Sources */,
+				20E87A4627833D42005B3DB2 /* FavoritesDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

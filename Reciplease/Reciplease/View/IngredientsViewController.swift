@@ -17,7 +17,11 @@ class IngredientsViewController: UIViewController {
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
 
+    // MARK: - Properties
 
+    private var ingredientList: [String] = []
+
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,12 +30,30 @@ class IngredientsViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func addButtonTapped(_ sender: UIButton) {
+        updateIngredientListTextView()
     }
 
     @IBAction func clearButtonTapped(_ sender: UIButton) {
+
     }
 
     @IBAction func searchButtonTapped(_ sender: Any) {
+    }
+
+    // MARK: - Private functions
+    private func updateIngredientListTextView() {
+        ingredientListTextView.text = "- " + getIngredient() + "\n"
+    }
+
+    private func getIngredient() -> String {
+        guard let ingredient = ingredientTextField.text else {
+            return ""
+        }
+        return ingredient
+    }
+
+    private func clearIngredientList() {
+        ingredientListTextView.text = ""
     }
 
 

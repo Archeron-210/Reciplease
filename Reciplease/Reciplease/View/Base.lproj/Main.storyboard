@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VVm-5R-C9B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6f9-xY-lx0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,10 +8,31 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="M4Q-Gs-Tqo">
+            <objects>
+                <tabBarController id="6f9-xY-lx0" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ral-y1-69O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="VVm-5R-C9B" kind="relationship" relationship="viewControllers" id="fxK-IG-wk7"/>
+                        <segue destination="WwO-yS-ClA" kind="relationship" relationship="viewControllers" id="ObX-aH-o64"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hhL-io-gNr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1058" y="274"/>
+        </scene>
+        <!--Search-->
         <scene sceneID="HrA-UM-lA2">
             <objects>
                 <navigationController id="VVm-5R-C9B" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="E9v-Zw-kJD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oWh-Z2-eYY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -100,14 +121,14 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" text="- - - -" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdu-qb-qci" userLabel="Ingredients Text View">
-                                <rect key="frame" x="20" y="259" width="374" height="506"/>
+                                <rect key="frame" x="20" y="259" width="374" height="457"/>
                                 <color key="backgroundColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K34-2T-Dja">
-                                <rect key="frame" x="20" y="785" width="374" height="47"/>
+                                <rect key="frame" x="20" y="736" width="374" height="47"/>
                                 <color key="backgroundColor" red="0.34162098169999999" green="0.57520991560000001" blue="0.38036242129999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="25"/>
                                 <state key="normal" title="Search for recipes">
@@ -158,6 +179,173 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="666.66666666666674" y="-35.491071428571423"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="d4D-uX-siv">
+            <objects>
+                <navigationController id="WwO-yS-ClA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star" catalog="system" id="ZZq-JV-S16"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bob-6B-clK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jXq-XU-WRm" kind="relationship" relationship="rootViewController" id="kuC-5R-sPA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kPF-Kd-0Xk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-138" y="633"/>
+        </scene>
+        <!--Reciplease Favorites-->
+        <scene sceneID="g7B-DN-0rS">
+            <objects>
+                <viewController id="jXq-XU-WRm" userLabel="Reciplease Favorites" customClass="FavoritesViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9e3-Pv-mDg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HwM-Ta-z7b">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteCell" id="Jje-jp-5Ua">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jje-jp-5Ua" id="QjC-Ze-vVz">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8bq-7a-PLS" kind="show" id="qMe-gm-lSN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1dZ-pt-0ut"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HwM-Ta-z7b" firstAttribute="trailing" secondItem="1dZ-pt-0ut" secondAttribute="trailing" id="CPg-ZX-zc8"/>
+                            <constraint firstItem="HwM-Ta-z7b" firstAttribute="bottom" secondItem="1dZ-pt-0ut" secondAttribute="bottom" id="DeA-cQ-bTP"/>
+                            <constraint firstItem="HwM-Ta-z7b" firstAttribute="leading" secondItem="1dZ-pt-0ut" secondAttribute="leading" id="i2M-Nm-LS1"/>
+                            <constraint firstItem="HwM-Ta-z7b" firstAttribute="top" secondItem="1dZ-pt-0ut" secondAttribute="top" id="vc9-yq-7I1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reciplease" id="Yfv-5t-IZG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gQO-fs-86Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="666.66666666666674" y="632.8125"/>
+        </scene>
+        <!--Favorite Detail-->
+        <scene sceneID="MV5-9i-bkU">
+            <objects>
+                <viewController id="8bq-7a-PLS" userLabel="Favorite Detail" customClass="FavoritesDetailsViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n2B-7v-Ybr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default pic" translatesAutoresizingMaskIntoConstraints="NO" id="dWm-cD-8IQ" userLabel="Picture">
+                                <rect key="frame" x="0.0" y="88" width="414" height="269"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Dh8-Vv-sCj" userLabel="Picture Stack View">
+                                <rect key="frame" x="334" y="98" width="70" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes 👍🏻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxd-Yr-9Pq">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time ⏱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yG8-Pp-4yG">
+                                        <rect key="frame" x="0.0" y="37.5" width="70" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Dh8-Vv-sCj" secondAttribute="height" multiplier="1:1" id="Y1e-BZ-QEr"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crq-pf-sFB">
+                                <rect key="frame" x="0.0" y="315" width="414" height="42"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="M4a-Hg-2cC" userLabel="ingredients Stack View">
+                                <rect key="frame" x="20" y="367" width="374" height="374"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7h-bW-uYr">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
+                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="- - - -" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxg-dy-b2E" userLabel="Ingredients list">
+                                        <rect key="frame" x="0.0" y="39" width="374" height="335"/>
+                                        <color key="backgroundColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNN-7f-rav">
+                                <rect key="frame" x="30" y="746" width="354" height="45"/>
+                                <color key="backgroundColor" red="0.34162098169999999" green="0.57520991560000001" blue="0.38036242129999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="DJe-dh-ocz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="25"/>
+                                <state key="normal" title="Get directions">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bai-mP-OQl"/>
+                        <color key="backgroundColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Bai-mP-OQl" firstAttribute="trailing" secondItem="gNN-7f-rav" secondAttribute="trailing" constant="30" id="4vk-Kc-87G"/>
+                            <constraint firstItem="dWm-cD-8IQ" firstAttribute="top" secondItem="Bai-mP-OQl" secondAttribute="top" id="9ly-DE-jQM"/>
+                            <constraint firstItem="M4a-Hg-2cC" firstAttribute="top" secondItem="dWm-cD-8IQ" secondAttribute="bottom" constant="10" id="GE5-EP-4Oz"/>
+                            <constraint firstItem="gNN-7f-rav" firstAttribute="leading" secondItem="Bai-mP-OQl" secondAttribute="leading" constant="30" id="T6b-lh-S3U"/>
+                            <constraint firstItem="Bai-mP-OQl" firstAttribute="trailing" secondItem="M4a-Hg-2cC" secondAttribute="trailing" constant="20" id="cRV-KE-Nrv"/>
+                            <constraint firstItem="crq-pf-sFB" firstAttribute="trailing" secondItem="dWm-cD-8IQ" secondAttribute="trailing" id="eEK-RY-OHa"/>
+                            <constraint firstItem="M4a-Hg-2cC" firstAttribute="width" secondItem="M4a-Hg-2cC" secondAttribute="height" multiplier="1:1" id="ehT-Bg-nfD"/>
+                            <constraint firstItem="Dh8-Vv-sCj" firstAttribute="top" secondItem="Bai-mP-OQl" secondAttribute="top" constant="10" id="fkE-fy-iat"/>
+                            <constraint firstItem="Bai-mP-OQl" firstAttribute="trailing" secondItem="Dh8-Vv-sCj" secondAttribute="trailing" constant="10" id="goN-0Z-qHo"/>
+                            <constraint firstItem="dWm-cD-8IQ" firstAttribute="height" secondItem="n2B-7v-Ybr" secondAttribute="height" multiplier="0.3" id="gph-MS-4Pt"/>
+                            <constraint firstItem="crq-pf-sFB" firstAttribute="leading" secondItem="dWm-cD-8IQ" secondAttribute="leading" id="ie9-ib-IOO"/>
+                            <constraint firstItem="gNN-7f-rav" firstAttribute="top" secondItem="M4a-Hg-2cC" secondAttribute="bottom" constant="5" id="jdw-NQ-Ezb"/>
+                            <constraint firstItem="crq-pf-sFB" firstAttribute="bottom" secondItem="dWm-cD-8IQ" secondAttribute="bottom" id="kxj-Tv-fvG"/>
+                            <constraint firstItem="dWm-cD-8IQ" firstAttribute="trailing" secondItem="Bai-mP-OQl" secondAttribute="trailing" id="qNJ-al-cNq"/>
+                            <constraint firstItem="M4a-Hg-2cC" firstAttribute="leading" secondItem="Bai-mP-OQl" secondAttribute="leading" constant="20" id="qPY-j5-Iq7"/>
+                            <constraint firstItem="dWm-cD-8IQ" firstAttribute="leading" secondItem="Bai-mP-OQl" secondAttribute="leading" id="tgu-kL-RIa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reciplease" id="y3V-Ho-3Wf">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="3Jj-xE-KeX"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="ZII-IL-91g">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Xe-Ns-Hy5" userLabel="Favorite Button">
+                                <rect key="frame" x="266" y="0.0" width="128" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" image="star.fill" catalog="system"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="un5-xH-eZy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1428.985507246377" y="632.8125"/>
         </scene>
         <!--Recipes Results-->
         <scene sceneID="kAL-h2-erm">
@@ -217,10 +405,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default pic" translatesAutoresizingMaskIntoConstraints="NO" id="0pC-5D-W10" userLabel="Picture">
-                                <rect key="frame" x="0.0" y="88" width="414" height="283"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="0pC-5D-W10" secondAttribute="height" multiplier="414:283" id="1jr-ck-rfk"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="88" width="414" height="269"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="W0V-51-Toa" userLabel="Picture Stack View">
                                 <rect key="frame" x="334" y="98" width="70" height="70"/>
@@ -244,13 +429,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67X-j8-5PI">
-                                <rect key="frame" x="0.0" y="329" width="414" height="42"/>
+                                <rect key="frame" x="0.0" y="315" width="414" height="42"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a1u-Df-yDC" userLabel="ingredients Stack View">
-                                <rect key="frame" x="20" y="381" width="374" height="374"/>
+                                <rect key="frame" x="20" y="367" width="374" height="374"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyq-N9-Jyy">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
@@ -271,7 +456,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4B-0j-Ijl">
-                                <rect key="frame" x="30" y="775" width="354" height="45"/>
+                                <rect key="frame" x="30" y="746" width="354" height="45"/>
                                 <color key="backgroundColor" red="0.34162098169999999" green="0.57520991560000001" blue="0.38036242129999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="hpZ-6K-8Ke"/>
@@ -285,6 +470,7 @@
                         <viewLayoutGuide key="safeArea" id="lCK-jp-8cN"/>
                         <color key="backgroundColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="0pC-5D-W10" firstAttribute="height" secondItem="t6S-g2-Fd2" secondAttribute="height" multiplier="0.3" id="3zC-SJ-6T3"/>
                             <constraint firstItem="0pC-5D-W10" firstAttribute="leading" secondItem="lCK-jp-8cN" secondAttribute="leading" id="6Kj-ep-83l"/>
                             <constraint firstItem="lCK-jp-8cN" firstAttribute="trailing" secondItem="W0V-51-Toa" secondAttribute="trailing" constant="10" id="7jA-jx-W6u"/>
                             <constraint firstItem="67X-j8-5PI" firstAttribute="leading" secondItem="0pC-5D-W10" secondAttribute="leading" id="8BX-57-D11"/>
@@ -298,12 +484,12 @@
                             <constraint firstItem="L4B-0j-Ijl" firstAttribute="leading" secondItem="lCK-jp-8cN" secondAttribute="leading" constant="30" id="Xmy-yR-MOT"/>
                             <constraint firstItem="lCK-jp-8cN" firstAttribute="trailing" secondItem="a1u-Df-yDC" secondAttribute="trailing" constant="20" id="e5j-Sv-XJE"/>
                             <constraint firstItem="0pC-5D-W10" firstAttribute="top" secondItem="lCK-jp-8cN" secondAttribute="top" id="sHY-u2-jRg"/>
-                            <constraint firstItem="L4B-0j-Ijl" firstAttribute="top" secondItem="a1u-Df-yDC" secondAttribute="bottom" constant="20" id="vSU-fo-2V3"/>
+                            <constraint firstItem="L4B-0j-Ijl" firstAttribute="top" secondItem="a1u-Df-yDC" secondAttribute="bottom" constant="5" id="vSU-fo-2V3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reciplease" id="QOj-D6-C8J">
                         <barButtonItem key="rightBarButtonItem" id="Fnb-hU-4um">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Xf-83-EeW">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Xf-83-EeW" userLabel="Favorite Button">
                                 <rect key="frame" x="372" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="star" catalog="system">
@@ -315,12 +501,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5JA-0g-pBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2410.144927536232" y="-35.491071428571423"/>
+            <point key="canvasLocation" x="2238" y="-35"/>
         </scene>
     </scenes>
     <resources>
         <image name="default pic" width="308" height="308"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
