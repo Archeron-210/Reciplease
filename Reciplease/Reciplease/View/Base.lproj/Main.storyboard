@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="-141" y="-35"/>
         </scene>
-        <!--Reciplease-->
+        <!--Reciplease ingredients-->
         <scene sceneID="Xhu-Up-Upy">
             <objects>
-                <viewController id="Iza-CC-J01" customClass="IngredientsViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Iza-CC-J01" userLabel="Reciplease ingredients" customClass="IngredientsViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ed5-d6-xjC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,7 +51,10 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lemon, Cheese, Cream..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Isv-SV-3xG">
                                                 <rect key="frame" x="0.0" y="0.0" width="309" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Iza-CC-J01" id="Afx-LG-l1z"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptr-Ii-GW6">
                                                 <rect key="frame" x="314" y="0.0" width="60" height="40"/>
@@ -63,6 +66,9 @@
                                                 <state key="normal" title="Add">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="addButtonTapped:" destination="Iza-CC-J01" eventType="touchUpInside" id="tau-tg-RVH"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -87,6 +93,9 @@
                                         <state key="normal" title="Clear">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="clearButtonTapped:" destination="Iza-CC-J01" eventType="touchUpInside" id="cw4-Pi-cAS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -105,12 +114,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="searchButtonTapped:" destination="Iza-CC-J01" eventType="touchUpInside" id="f1m-fG-6AQ"/>
                                     <segue destination="9AJ-2N-tKX" kind="show" id="yz7-RL-K9u"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vp5-CT-0ed"/>
                         <color key="backgroundColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ELv-Ir-dWL" firstAttribute="top" secondItem="Fmg-AX-clm" secondAttribute="bottom" constant="30" id="2U9-7l-GlU"/>
                             <constraint firstItem="Fmg-AX-clm" firstAttribute="leading" secondItem="Vp5-CT-0ed" secondAttribute="leading" constant="20" id="4c3-wK-Zfc"/>
@@ -126,10 +137,25 @@
                             <constraint firstItem="K34-2T-Dja" firstAttribute="leading" secondItem="Vp5-CT-0ed" secondAttribute="leading" constant="20" id="vFV-0X-L7w"/>
                             <constraint firstItem="jdu-qb-qci" firstAttribute="top" secondItem="ELv-Ir-dWL" secondAttribute="bottom" constant="5" id="vZi-bC-bYD"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aeD-qa-g3n" appends="YES" id="a0T-E0-0f7"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Reciplease" id="R1R-o6-5Qn"/>
+                    <connections>
+                        <outlet property="addButton" destination="ptr-Ii-GW6" id="PU7-gk-c2b"/>
+                        <outlet property="clearButton" destination="Gm4-EW-kD8" id="Hcg-0L-LbN"/>
+                        <outlet property="ingredientListTextView" destination="jdu-qb-qci" id="ZxL-bX-Zpy"/>
+                        <outlet property="ingredientTextField" destination="Isv-SV-3xG" id="hf0-CC-6Zo"/>
+                        <outlet property="searchButton" destination="K34-2T-Dja" id="2km-H3-Hco"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekZ-5I-8g6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aeD-qa-g3n">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="Iza-CC-J01" id="BGo-ML-t7f"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="666.66666666666674" y="-35.491071428571423"/>
         </scene>

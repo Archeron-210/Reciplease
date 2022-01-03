@@ -1,9 +1,3 @@
-//
-//  RecipesViewController.swift
-//  Reciplease
-//
-//  Created by Archeron on 29/12/2021.
-//
 
 import UIKit
 

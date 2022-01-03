@@ -9,21 +9,54 @@ import UIKit
 
 class IngredientsViewController: UIViewController {
 
+
+    // MARK: - Outlets
+    @IBOutlet weak var ingredientTextField: UITextField!
+    @IBOutlet weak var ingredientListTextView: UITextView!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var searchButton: UIButton!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setButtonsAspect()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Actions
+    @IBAction func addButtonTapped(_ sender: UIButton) {
     }
-    */
 
+    @IBAction func clearButtonTapped(_ sender: UIButton) {
+    }
+
+    @IBAction func searchButtonTapped(_ sender: Any) {
+    }
+
+
+    // MARK: - UI Aspect
+
+    private func setButtonsAspect() {
+        addButton.layer.cornerRadius = 10.0
+        clearButton.layer.cornerRadius = 10.0
+        searchButton.layer.cornerRadius = 10.0
+    }
 }
+
+
+// MARK: - Keyboard Management
+extension IngredientsViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        ingredientTextField.resignFirstResponder()
+        return true
+    }
+
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        ingredientTextField.resignFirstResponder()
+    }
+}
+
+
+
