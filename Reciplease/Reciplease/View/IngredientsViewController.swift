@@ -21,6 +21,10 @@ class IngredientsViewController: UIViewController {
 
     private var ingredientList: [String] = []
 
+    private var ingredientListFormated: String {
+        "- " + ingredientList.joined(separator: "\n- ")
+    }
+
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,30 +34,33 @@ class IngredientsViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func addButtonTapped(_ sender: UIButton) {
+        guard let ingredient = ingredientTextField.text else {
+            return
+        }
+        addIngredientToList(ingredient)
         updateIngredientListTextView()
     }
 
     @IBAction func clearButtonTapped(_ sender: UIButton) {
-
+        clearIngredientList()
     }
 
     @IBAction func searchButtonTapped(_ sender: Any) {
     }
 
     // MARK: - Private functions
-    private func updateIngredientListTextView() {
-        ingredientListTextView.text = "- " + getIngredient() + "\n"
+    private func addIngredientToList(_ ingredient: String) {
+        ingredientList.append(ingredient)
     }
 
-    private func getIngredient() -> String {
-        guard let ingredient = ingredientTextField.text else {
-            return ""
-        }
-        return ingredient
+    private func updateIngredientListTextView() {
+        ingredientListTextView.text = ingredientListFormated
     }
 
     private func clearIngredientList() {
         ingredientListTextView.text = ""
+
+        ingredientList.removeAll()
     }
 
 
