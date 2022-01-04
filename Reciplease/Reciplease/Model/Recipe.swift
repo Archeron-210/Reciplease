@@ -1,9 +1,3 @@
-//
-//  Recipe.swift
-//  Reciplease
-//
-//  Created by Archeron on 04/01/2022.
-//
 
 import Foundation
 
@@ -12,7 +6,7 @@ struct RecipeHit: Decodable {
 }
 
 struct Recipe: Decodable {
-    var recipe: [RecipeDetail]
+    var recipe: RecipeDetail
 }
 
 struct RecipeDetail: Decodable {

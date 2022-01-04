@@ -19,14 +19,15 @@ class NetworkService {
     private let appKey = "26412c033f6bae209ab0f640835652ac"
     private let type = "public"
 
-    func getRecipes(ingredientList: [String], completion: @escaping () -> Void) {
+    func getRecipes(ingredientList: [String], completion: @escaping (Result<[RecipeDetail], AFError>) -> Void) {
         let parameters = computeParameters(for: ingredientList)
-        AF.request(baseURL, parameters: parameters).responseString { (response) in
+        AF.request(baseURL, parameters: parameters).responseDecodable(of: RecipeHit.self) { (response) in
             switch response.result {
-            case .success(let rawJSON):
-                print(rawJSON)
-            case .failure:
-                print("Oh no")
+            case .success(let recipeHit):
+                let recipeDetails = recipeHit.hits.map { $0.recipe } 
+                completion(.success(recipeDetails))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }

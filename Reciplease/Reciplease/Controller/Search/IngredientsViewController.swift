@@ -65,8 +65,15 @@ class IngredientsViewController: UIViewController {
     }
 
     private func getRecipes() {
-        NetworkService.shared.getRecipes(ingredientList: ingredientList) {
-            
+        NetworkService.shared.getRecipes(ingredientList: ingredientList) { result in
+            switch result {
+            case .success(let recipeDetails):
+                print("Yay \(recipeDetails)")
+                // Segue vers controller + on lui donne les recipeDetails a afficher
+            case .failure(let error):
+                print("Oh no \(error)")
+                // Alert erreur
+            }
         }
     }
 
