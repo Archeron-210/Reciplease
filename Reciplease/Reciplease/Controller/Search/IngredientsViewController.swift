@@ -46,6 +46,7 @@ class IngredientsViewController: UIViewController {
     }
 
     @IBAction func searchButtonTapped(_ sender: Any) {
+        getRecipes()
     }
 
     // MARK: - Private functions
@@ -61,6 +62,12 @@ class IngredientsViewController: UIViewController {
         ingredientListTextView.text = ""
 
         ingredientList.removeAll()
+    }
+
+    private func getRecipes() {
+        NetworkService.shared.getRecipes(ingredientList: ingredientList) {
+            
+        }
     }
 
 
