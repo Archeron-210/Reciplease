@@ -77,7 +77,7 @@ class IngredientsViewController: UIViewController {
         NetworkService.shared.getRecipes(ingredientList: ingredientList) { result in
             switch result {
             case .success(let recipeDetails):
-                print("Yay \(recipeDetails)")
+                RecipeService.shared.recipes = recipeDetails
                 self.performSegue(withIdentifier: "segueToSearchResults", sender: self)
                 // Segue vers controller + on lui donne les recipeDetails a afficher
             case .failure:
