@@ -35,6 +35,9 @@ class IngredientsViewController: UIViewController {
     // MARK: - Actions
     @IBAction func addButtonTapped(_ sender: UIButton) {
         guard let ingredient = ingredientTextField.text else {
+            return
+        }
+        guard ingredient != "" else {
             emptyTextFieldAlert()
             return
         }
@@ -47,10 +50,15 @@ class IngredientsViewController: UIViewController {
     }
 
     @IBAction func searchButtonTapped(_ sender: Any) {
+        guard !ingredientListTextView.text.isEmpty else {
+            emptyListAlert()
+            return
+        }
         getRecipes()
     }
 
     // MARK: - Private functions
+
     private func addIngredientToList(_ ingredient: String) {
         ingredientList.append(ingredient)
     }
@@ -88,6 +96,13 @@ class IngredientsViewController: UIViewController {
 
     private func emptyTextFieldAlert() {
         let alert = UIAlertController(title: "⚠️", message: "You need to enter an ingredient to make your list! 📝", preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
+    }
+
+    private func emptyListAlert() {
+        let alert = UIAlertController(title: "⚠️", message: "You need to have at least one ingredient in your list to obtain search results 🔍", preferredStyle: .alert)
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(actionAlert)
         present(alert, animated: true, completion: nil)
