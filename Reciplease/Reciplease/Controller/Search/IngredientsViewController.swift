@@ -70,6 +70,7 @@ class IngredientsViewController: UIViewController {
             switch result {
             case .success(let recipeDetails):
                 print("Yay \(recipeDetails)")
+                self.performSegue(withIdentifier: "segueToSearchResults", sender: self)
                 // Segue vers controller + on lui donne les recipeDetails a afficher
             case .failure:
                 self.errorAlert()

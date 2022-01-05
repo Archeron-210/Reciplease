@@ -102,13 +102,13 @@
                                 <rect key="frame" x="20" y="214" width="374" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your ingredients:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqR-J9-Fb1">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="40"/>
-                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="282" height="40"/>
+                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gm4-EW-kD8">
-                                        <rect key="frame" x="283" y="0.0" width="91" height="40"/>
+                                        <rect key="frame" x="290" y="0.0" width="84" height="40"/>
                                         <color key="backgroundColor" red="0.54898315669999997" green="0.54509329799999995" blue="0.54509836440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="20"/>
                                         <state key="normal" title="Clear">
@@ -120,9 +120,9 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" text="- - - -" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdu-qb-qci" userLabel="Ingredients Text View">
-                                <rect key="frame" x="20" y="259" width="374" height="457"/>
-                                <color key="backgroundColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdu-qb-qci" userLabel="Ingredients Text View">
+                                <rect key="frame" x="20" y="274" width="374" height="442"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -136,7 +136,6 @@
                                 </state>
                                 <connections>
                                     <action selector="searchButtonTapped:" destination="Iza-CC-J01" eventType="touchUpInside" id="f1m-fG-6AQ"/>
-                                    <segue destination="9AJ-2N-tKX" kind="show" id="yz7-RL-K9u"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -156,7 +155,7 @@
                             <constraint firstItem="jdu-qb-qci" firstAttribute="leading" secondItem="Vp5-CT-0ed" secondAttribute="leading" constant="20" id="oHu-Zt-ble"/>
                             <constraint firstItem="K34-2T-Dja" firstAttribute="top" secondItem="jdu-qb-qci" secondAttribute="bottom" constant="20" id="pRf-fq-M0x"/>
                             <constraint firstItem="K34-2T-Dja" firstAttribute="leading" secondItem="Vp5-CT-0ed" secondAttribute="leading" constant="20" id="vFV-0X-L7w"/>
-                            <constraint firstItem="jdu-qb-qci" firstAttribute="top" secondItem="ELv-Ir-dWL" secondAttribute="bottom" constant="5" id="vZi-bC-bYD"/>
+                            <constraint firstItem="jdu-qb-qci" firstAttribute="top" secondItem="ELv-Ir-dWL" secondAttribute="bottom" constant="20" id="vZi-bC-bYD"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="aeD-qa-g3n" appends="YES" id="a0T-E0-0f7"/>
@@ -169,6 +168,7 @@
                         <outlet property="ingredientListTextView" destination="jdu-qb-qci" id="ZxL-bX-Zpy"/>
                         <outlet property="ingredientTextField" destination="Isv-SV-3xG" id="hf0-CC-6Zo"/>
                         <outlet property="searchButton" destination="K34-2T-Dja" id="2km-H3-Hco"/>
+                        <segue destination="9AJ-2N-tKX" kind="show" identifier="segueToSearchResults" id="Td3-zh-IPx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekZ-5I-8g6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
