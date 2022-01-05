@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0EBF1DE6B3CC90BD12A90824 /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5993D39590D4F8A31FD10157 /* Pods_Reciplease.framework */; };
-		20BF3DEF2784A0C500064DC1 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BF3DEE2784A0C500064DC1 /* Recipe.swift */; };
+		20BF3DEF2784A0C500064DC1 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BF3DEE2784A0C500064DC1 /* RecipeData.swift */; };
 		20E879EE277C7956005B3DB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E879ED277C7956005B3DB2 /* AppDelegate.swift */; };
 		20E879F0277C7956005B3DB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E879EF277C7956005B3DB2 /* SceneDelegate.swift */; };
 		20E879F5277C7956005B3DB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E879F3277C7956005B3DB2 /* Main.storyboard */; };
@@ -45,7 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		20BF3DEE2784A0C500064DC1 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		20BF3DEE2784A0C500064DC1 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
 		20E879EA277C7956005B3DB2 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E879ED277C7956005B3DB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20E879EF277C7956005B3DB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 			children = (
 				20E87A2A277C7C39005B3DB2 /* CoreData */,
 				20E87A56278491C1005B3DB2 /* NetworkService.swift */,
-				20BF3DEE2784A0C500064DC1 /* Recipe.swift */,
+				20BF3DEE2784A0C500064DC1 /* RecipeData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -474,7 +474,7 @@
 				20E87A3C277CC33E005B3DB2 /* RecipeDetailViewController.swift in Sources */,
 				20E879F0277C7956005B3DB2 /* SceneDelegate.swift in Sources */,
 				20E87A4627833D42005B3DB2 /* FavoritesDetailsViewController.swift in Sources */,
-				20BF3DEF2784A0C500064DC1 /* Recipe.swift in Sources */,
+				20BF3DEF2784A0C500064DC1 /* RecipeData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

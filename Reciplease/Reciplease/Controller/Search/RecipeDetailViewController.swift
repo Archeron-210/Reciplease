@@ -6,8 +6,8 @@ class RecipeDetailViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var recipePicture: UIImageView!
-    @IBOutlet weak var likesAndTimeStackView: UIStackView!
-    @IBOutlet weak var likesLabel: UILabel!
+    @IBOutlet weak var servsAndTimeStackView: UIStackView!
+    @IBOutlet weak var servsLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var ingredientListTextView: UITextView!
@@ -31,7 +31,7 @@ class RecipeDetailViewController: UIViewController {
 
     // MARK: - Private functions
 
-    private func updateLikesAndTimeLabels() {
+    private func updateServsAndTimeLabels() {
 
     }
 
@@ -61,8 +61,8 @@ class RecipeDetailViewController: UIViewController {
 
     private func setInterfaceAspect() {
         getDirectionsButton.layer.cornerRadius = 10.0
-        likesAndTimeStackView.layer.cornerRadius = 5.0
-        likesAndTimeStackView.layer.borderWidth = 0.5
-        likesAndTimeStackView.layer.borderColor = UIColor.white.cgColor
+        servsAndTimeStackView.layer.cornerRadius = 5.0
+        servsAndTimeStackView.layer.borderWidth = 0.5
+        servsAndTimeStackView.layer.borderColor = UIColor.white.cgColor
     }
 }

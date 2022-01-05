@@ -254,16 +254,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="269"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Dh8-Vv-sCj" userLabel="Likes and Time Stack View">
-                                <rect key="frame" x="334" y="98" width="70" height="70"/>
+                                <rect key="frame" x="330" y="98" width="74" height="74"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes 👍🏻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxd-Yr-9Pq">
-                                        <rect key="frame" x="0.0" y="0.0" width="70" height="32.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servs 🍴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxd-Yr-9Pq" userLabel="Servs Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="34.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time ⏱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yG8-Pp-4yG">
-                                        <rect key="frame" x="0.0" y="37.5" width="70" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="39.5" width="74" height="34.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -352,10 +352,10 @@
                         <outlet property="favoriteButton" destination="8Xe-Ns-Hy5" id="6Yk-2V-dpn"/>
                         <outlet property="getDirectionButton" destination="gNN-7f-rav" id="jOP-FA-Jdk"/>
                         <outlet property="ingredientListTextView" destination="Hxg-dy-b2E" id="03I-IU-y06"/>
-                        <outlet property="likesAndTimeStackView" destination="Dh8-Vv-sCj" id="YWb-rL-g5n"/>
                         <outlet property="likesLabel" destination="uxd-Yr-9Pq" id="F1R-1F-dI9"/>
                         <outlet property="recipePicture" destination="dWm-cD-8IQ" id="11w-pl-9RV"/>
                         <outlet property="recipeTitle" destination="crq-pf-sFB" id="Gf8-YM-ouc"/>
+                        <outlet property="servsAndTimeStackView" destination="Dh8-Vv-sCj" id="YWb-rL-g5n"/>
                         <outlet property="timeLabel" destination="yG8-Pp-4yG" id="S5B-CE-iXL"/>
                     </connections>
                 </viewController>
@@ -424,16 +424,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="269"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="W0V-51-Toa" userLabel="Picture Stack View">
-                                <rect key="frame" x="334" y="98" width="70" height="70"/>
+                                <rect key="frame" x="330" y="98" width="74" height="74"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes 👍🏻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bp2-z2-YVn">
-                                        <rect key="frame" x="0.0" y="0.0" width="70" height="32.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servs 🍴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bp2-z2-YVn" userLabel="Servs Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="34.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time ⏱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKZ-hE-GXw">
-                                        <rect key="frame" x="0.0" y="37.5" width="70" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="39.5" width="74" height="34.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -524,10 +524,10 @@
                         <outlet property="favoriteButton" destination="9Xf-83-EeW" id="fgt-yp-e9n"/>
                         <outlet property="getDirectionsButton" destination="L4B-0j-Ijl" id="aCd-sP-fda"/>
                         <outlet property="ingredientListTextView" destination="zc9-7r-Tzk" id="MTR-oi-9XX"/>
-                        <outlet property="likesAndTimeStackView" destination="W0V-51-Toa" id="rZN-mi-Slv"/>
                         <outlet property="likesLabel" destination="bp2-z2-YVn" id="r3M-Qp-Qyi"/>
                         <outlet property="recipePicture" destination="0pC-5D-W10" id="ndE-fa-CO3"/>
                         <outlet property="recipeTitleLabel" destination="67X-j8-5PI" id="Ddm-d0-5E1"/>
+                        <outlet property="servsAndTimeStackView" destination="W0V-51-Toa" id="rZN-mi-Slv"/>
                         <outlet property="timeLabel" destination="yKZ-hE-GXw" id="Ynw-KA-nHQ"/>
                     </connections>
                 </viewController>
