@@ -35,6 +35,7 @@ class IngredientsViewController: UIViewController {
     // MARK: - Actions
     @IBAction func addButtonTapped(_ sender: UIButton) {
         guard let ingredient = ingredientTextField.text else {
+            emptyTextFieldAlert()
             return
         }
         addIngredientToList(ingredient)
@@ -70,13 +71,26 @@ class IngredientsViewController: UIViewController {
             case .success(let recipeDetails):
                 print("Yay \(recipeDetails)")
                 // Segue vers controller + on lui donne les recipeDetails a afficher
-            case .failure(let error):
-                print("Oh no \(error)")
-                // Alert erreur
+            case .failure:
+                self.errorAlert()
             }
         }
     }
 
+    // MARK: - Alerts
+    private func errorAlert() {
+        let alert = UIAlertController(title: "⚠️", message: "It seems like something went wrong with servers 🔌", preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
+    }
+
+    private func emptyTextFieldAlert() {
+        let alert = UIAlertController(title: "⚠️", message: "You need to enter an ingredient to make your list! 📝", preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
+    }
 
     // MARK: - UI Aspect
 
