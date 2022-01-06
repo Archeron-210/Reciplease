@@ -6,7 +6,7 @@ class RecipeDetailViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var recipePicture: UIImageView!
     @IBOutlet weak var servsAndTimeStackView: UIStackView!
-    @IBOutlet weak var servsLabel: UILabel!
+    @IBOutlet weak var servingsLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var ingredientListTextView: UITextView!
@@ -47,12 +47,11 @@ class RecipeDetailViewController: UIViewController {
     }
 
     private func updateFavoriteIcon() {
-        if !favoriteButton.isSelected {
+        if !favoriteButton.isHighlighted {
             favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .selected)
         } else {
             favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
         }
-
     }
 
 

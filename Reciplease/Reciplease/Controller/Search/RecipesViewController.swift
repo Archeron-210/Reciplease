@@ -4,6 +4,7 @@ import UIKit
 class RecipesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var recipes: [RecipeDetail] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,7 @@ extension RecipesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return RecipeService.shared.recipes.count
+        return recipes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -27,7 +28,7 @@ extension RecipesViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let recipe = RecipeService.shared.recipes[indexPath.row]
+        let recipe = recipes[indexPath.row]
 
         cell.configure(with: recipe)
 

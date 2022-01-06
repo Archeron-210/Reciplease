@@ -161,7 +161,9 @@
                             <outletCollection property="gestureRecognizers" destination="aeD-qa-g3n" appends="YES" id="a0T-E0-0f7"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Reciplease" id="R1R-o6-5Qn"/>
+                    <navigationItem key="navigationItem" title="Reciplease" id="R1R-o6-5Qn">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="lPx-d1-79Z"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="ptr-Ii-GW6" id="PU7-gk-c2b"/>
                         <outlet property="clearButton" destination="Gm4-EW-kD8" id="Hcg-0L-LbN"/>
@@ -366,7 +368,7 @@
         <!--Recipes Results-->
         <scene sceneID="kAL-h2-erm">
             <objects>
-                <viewController id="9AJ-2N-tKX" userLabel="Recipes Results" customClass="RecipesViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipesViewController" id="9AJ-2N-tKX" userLabel="Recipes Results" customClass="RecipesViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lo9-TP-4ZR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -569,6 +571,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reciplease" id="QOj-D6-C8J">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="OBd-sJ-lxd"/>
                         <barButtonItem key="rightBarButtonItem" id="Fnb-hU-4um">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Xf-83-EeW" userLabel="Favorite Button">
                                 <rect key="frame" x="372" y="11" width="22" height="22"/>
@@ -586,9 +589,9 @@
                         <outlet property="favoriteButton" destination="9Xf-83-EeW" id="fgt-yp-e9n"/>
                         <outlet property="getDirectionsButton" destination="L4B-0j-Ijl" id="aCd-sP-fda"/>
                         <outlet property="ingredientListTextView" destination="zc9-7r-Tzk" id="MTR-oi-9XX"/>
-                        <outlet property="likesLabel" destination="bp2-z2-YVn" id="r3M-Qp-Qyi"/>
                         <outlet property="recipePicture" destination="0pC-5D-W10" id="ndE-fa-CO3"/>
                         <outlet property="recipeTitleLabel" destination="67X-j8-5PI" id="Ddm-d0-5E1"/>
+                        <outlet property="servingsLabel" destination="bp2-z2-YVn" id="d2r-Ou-1jh"/>
                         <outlet property="servsAndTimeStackView" destination="W0V-51-Toa" id="rZN-mi-Slv"/>
                         <outlet property="timeLabel" destination="yKZ-hE-GXw" id="Ynw-KA-nHQ"/>
                     </connections>
