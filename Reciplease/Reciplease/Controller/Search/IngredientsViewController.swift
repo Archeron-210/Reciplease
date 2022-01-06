@@ -69,8 +69,9 @@ class IngredientsViewController: UIViewController {
     }
 
     private func getRecipes() {
+        toggleActivityIndicator(shown: true)
         NetworkService.shared.getRecipes(ingredientList: ingredientList) { result in
-            self.toggleActivityIndicator(shown: true)
+            self.toggleActivityIndicator(shown: false)
             switch result {
             case .success(let recipeDetails):
                 guard let recipesViewController = self.storyboard?.instantiateViewController(identifier: "RecipesViewController") as? RecipesViewController else {
@@ -117,7 +118,6 @@ class IngredientsViewController: UIViewController {
     private func toggleActivityIndicator(shown: Bool) {
         searchButton.isHidden = shown
         activityIndicator.isHidden = !shown
-        shown ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
 }
 

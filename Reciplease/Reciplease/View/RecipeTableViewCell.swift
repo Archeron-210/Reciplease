@@ -27,6 +27,11 @@ class RecipeTableViewCell: UITableViewCell {
         ingredientDetailsLabel.text = recipe.ingredients.first?.food
     }
 
+    private func displayIngredients(from ingredientsArray: [IngredientDetail]) -> String {
+      
+        return ""
+    }
+
     private func setAspect() {
         servsAndTimeStackView.layer.cornerRadius = 5.0
         servsAndTimeStackView.layer.borderWidth = 1
