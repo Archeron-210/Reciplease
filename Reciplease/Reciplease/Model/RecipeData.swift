@@ -16,4 +16,12 @@ struct RecipeDetail: Decodable {
     var yield: Double
     var ingredientLines: [String]
     var totalTime: Double
+
+    var formatedTime: String {
+        " \(Int(self.totalTime))min ⏱"
+    }
+
+    var formatedServings: String {
+        "\(Int(self.yield)) 🍴"
+    }
 }

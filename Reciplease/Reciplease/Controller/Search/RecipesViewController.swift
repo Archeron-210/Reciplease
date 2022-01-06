@@ -19,13 +19,17 @@ extension RecipesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return RecipeService.shared.recipes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeTableViewCell else {
+            return UITableViewCell()
+        }
 
-        // remplir les cellules
+        let recipe = RecipeService.shared.recipes[indexPath.row]
+
+        cell.configure(with: recipe)
 
         return cell
     }

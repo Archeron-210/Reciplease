@@ -16,9 +16,20 @@ class RecipeTableViewCell: UITableViewCell {
     // MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setAspect()
     }
 
+    func configure(with recipe: RecipeDetail) {
+        recipeImageView.image = UIImage(named: "default pic")
+        servingsLabel.text = recipe.formatedServings
+        timeLabel.text = recipe.formatedTime
+        recipeTitleLabel.text = recipe.label
+        ingredientDetailsLabel.text = "Ingredients"
+    }
 
-
+    private func setAspect() {
+        servsAndTimeStackView.layer.cornerRadius = 5.0
+        servsAndTimeStackView.layer.borderWidth = 1
+        servsAndTimeStackView.layer.borderColor = UIColor.white.cgColor
+    }
 }
