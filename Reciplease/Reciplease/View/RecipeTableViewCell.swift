@@ -24,7 +24,7 @@ class RecipeTableViewCell: UITableViewCell {
         servingsLabel.text = recipe.formatedServings
         timeLabel.text = recipe.formatedTime
         recipeTitleLabel.text = recipe.label
-        ingredientDetailsLabel.text = "Ingredients"
+        ingredientDetailsLabel.text = recipe.ingredients.first?.food
     }
 
     private func setAspect() {

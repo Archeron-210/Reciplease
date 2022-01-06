@@ -33,4 +33,13 @@ extension RecipesViewController: UITableViewDataSource {
 
         return cell
     }
+
+    // segue to next controller to display recipe details when a cell is clicked :
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        performSegue(withIdentifier: "mySegue", sender: cell)
+    }
+
 }

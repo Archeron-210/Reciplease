@@ -1,9 +1,3 @@
-//
-//  FavoritesDetailsViewController.swift
-//  Reciplease
-//
-//  Created by Archeron on 03/01/2022.
-//
 
 import UIKit
 

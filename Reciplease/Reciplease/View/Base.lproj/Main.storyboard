@@ -445,7 +445,7 @@
                                             <outlet property="servingsLabel" destination="Bcs-7i-doB" id="fxe-1A-biC"/>
                                             <outlet property="servsAndTimeStackView" destination="nMs-94-UER" id="6mI-Ec-VZj"/>
                                             <outlet property="timeLabel" destination="Jjl-Ej-A8b" id="6fV-Uq-3mH"/>
-                                            <segue destination="CBx-4Y-33W" kind="show" id="ccE-iy-cnI"/>
+                                            <segue destination="CBx-4Y-33W" kind="show" identifier="segueToDetails" id="ccE-iy-cnI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
