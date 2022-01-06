@@ -138,6 +138,9 @@
                                     <action selector="searchButtonTapped:" destination="Iza-CC-J01" eventType="touchUpInside" id="f1m-fG-6AQ"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="XzU-pl-prh">
+                                <rect key="frame" x="188.5" y="741" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vp5-CT-0ed"/>
                         <color key="backgroundColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -145,15 +148,17 @@
                         <constraints>
                             <constraint firstItem="ELv-Ir-dWL" firstAttribute="top" secondItem="Fmg-AX-clm" secondAttribute="bottom" constant="30" id="2U9-7l-GlU"/>
                             <constraint firstItem="Fmg-AX-clm" firstAttribute="leading" secondItem="Vp5-CT-0ed" secondAttribute="leading" constant="20" id="4c3-wK-Zfc"/>
-                            <constraint firstItem="Vp5-CT-0ed" firstAttribute="trailing" secondItem="K34-2T-Dja" secondAttribute="trailing" constant="20" id="8aJ-rb-mhx"/>
+                            <constraint firstItem="Vp5-CT-0ed" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="K34-2T-Dja" secondAttribute="trailing" constant="20" id="8aJ-rb-mhx"/>
                             <constraint firstItem="Vp5-CT-0ed" firstAttribute="bottom" secondItem="K34-2T-Dja" secondAttribute="bottom" constant="30" id="BxI-wT-4LY"/>
                             <constraint firstItem="Fmg-AX-clm" firstAttribute="top" secondItem="Vp5-CT-0ed" secondAttribute="top" constant="20" id="Ezu-Zt-cCZ"/>
                             <constraint firstItem="Vp5-CT-0ed" firstAttribute="trailing" secondItem="jdu-qb-qci" secondAttribute="trailing" constant="20" id="Gyy-Xu-r2e"/>
                             <constraint firstItem="ELv-Ir-dWL" firstAttribute="leading" secondItem="Vp5-CT-0ed" secondAttribute="leading" constant="20" id="MqM-WC-NtA"/>
+                            <constraint firstItem="XzU-pl-prh" firstAttribute="centerX" secondItem="K34-2T-Dja" secondAttribute="centerX" id="QRi-4e-CT8"/>
                             <constraint firstItem="Vp5-CT-0ed" firstAttribute="trailing" secondItem="ELv-Ir-dWL" secondAttribute="trailing" constant="20" id="UDe-4G-GeG"/>
                             <constraint firstItem="Vp5-CT-0ed" firstAttribute="trailing" secondItem="Fmg-AX-clm" secondAttribute="trailing" constant="20" id="maZ-xj-hMU"/>
                             <constraint firstItem="jdu-qb-qci" firstAttribute="leading" secondItem="Vp5-CT-0ed" secondAttribute="leading" constant="20" id="oHu-Zt-ble"/>
                             <constraint firstItem="K34-2T-Dja" firstAttribute="top" secondItem="jdu-qb-qci" secondAttribute="bottom" constant="20" id="pRf-fq-M0x"/>
+                            <constraint firstItem="XzU-pl-prh" firstAttribute="centerY" secondItem="K34-2T-Dja" secondAttribute="centerY" id="sFe-2D-dyZ"/>
                             <constraint firstItem="K34-2T-Dja" firstAttribute="leading" secondItem="Vp5-CT-0ed" secondAttribute="leading" constant="20" id="vFV-0X-L7w"/>
                             <constraint firstItem="jdu-qb-qci" firstAttribute="top" secondItem="ELv-Ir-dWL" secondAttribute="bottom" constant="20" id="vZi-bC-bYD"/>
                         </constraints>
@@ -165,6 +170,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="lPx-d1-79Z"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="XzU-pl-prh" id="tr0-xX-eF3"/>
                         <outlet property="addButton" destination="ptr-Ii-GW6" id="PU7-gk-c2b"/>
                         <outlet property="clearButton" destination="Gm4-EW-kD8" id="Hcg-0L-LbN"/>
                         <outlet property="ingredientListTextView" destination="jdu-qb-qci" id="ZxL-bX-Zpy"/>

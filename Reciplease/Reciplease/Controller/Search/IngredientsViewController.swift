@@ -10,7 +10,8 @@ class IngredientsViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     // MARK: - Properties
 
     private var ingredientList: [String] = []
@@ -22,7 +23,7 @@ class IngredientsViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.toggleActivityIndicator(shown: false)
         setButtonsAspect()
     }
 
@@ -69,6 +70,7 @@ class IngredientsViewController: UIViewController {
 
     private func getRecipes() {
         NetworkService.shared.getRecipes(ingredientList: ingredientList) { result in
+            self.toggleActivityIndicator(shown: true)
             switch result {
             case .success(let recipeDetails):
                 guard let recipesViewController = self.storyboard?.instantiateViewController(identifier: "RecipesViewController") as? RecipesViewController else {
@@ -110,6 +112,12 @@ class IngredientsViewController: UIViewController {
         addButton.layer.cornerRadius = 10.0
         clearButton.layer.cornerRadius = 10.0
         searchButton.layer.cornerRadius = 10.0
+    }
+
+    private func toggleActivityIndicator(shown: Bool) {
+        searchButton.isHidden = shown
+        activityIndicator.isHidden = !shown
+        shown ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
 }
 
