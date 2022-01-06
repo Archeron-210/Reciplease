@@ -24,13 +24,14 @@ class RecipeTableViewCell: UITableViewCell {
         servingsLabel.text = recipe.formatedServings
         timeLabel.text = recipe.formatedTime
         recipeTitleLabel.text = recipe.label
-        ingredientDetailsLabel.text = recipe.ingredients.first?.food
+        ingredientDetailsLabel.text = getIngredientsName(from: recipe.ingredients)
     }
 
-    private func displayIngredients(from ingredientsArray: [IngredientDetail]) -> String {
-      
-        return ""
+    private func getIngredientsName(from ingredientsArray: [IngredientDetail]) -> String {
+        let ingredientsName = ingredientsArray.map(\.food)
+        return ingredientsName.joined(separator: ", ")
     }
+
 
     private func setAspect() {
         servsAndTimeStackView.layer.cornerRadius = 5.0
