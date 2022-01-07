@@ -4,7 +4,7 @@ import UIKit
 class RecipesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-
+    
     
     var recipes: [RecipeDetail] = []
 
