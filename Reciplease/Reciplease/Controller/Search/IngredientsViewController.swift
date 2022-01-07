@@ -77,8 +77,8 @@ class IngredientsViewController: UIViewController {
                 guard let recipesViewController = self.storyboard?.instantiateViewController(identifier: "RecipesViewController") as? RecipesViewController else {
                     return
                 }
-                self.navigationController?.pushViewController(recipesViewController, animated: true)
                 recipesViewController.recipes = recipeDetails
+                self.navigationController?.pushViewController(recipesViewController, animated: true)
             case .failure:
                 self.errorAlert()
             }

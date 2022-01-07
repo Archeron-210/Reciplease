@@ -4,6 +4,8 @@ import UIKit
 class RecipesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+
+    
     var recipes: [RecipeDetail] = []
 
     override func viewDidLoad() {
@@ -11,6 +13,7 @@ class RecipesViewController: UIViewController {
         tableView.reloadData()
         // Do any additional setup after loading the view.
     }
+
 
 }
 
@@ -34,13 +37,17 @@ extension RecipesViewController: UITableViewDataSource {
 
         return cell
     }
+}
 
+extension RecipesViewController: UITableViewDelegate {
     // segue to next controller to display recipe details when a cell is clicked :
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        performSegue(withIdentifier: "mySegue", sender: cell)
+        guard let recipeDetailViewController = self.storyboard?.instantiateViewController(identifier: "RecipeDetailViewController") as? RecipeDetailViewController else {
+            return
+        }
+        recipeDetailViewController.recipeDetail = recipes[indexPath.row]
+        self.navigationController?.pushViewController(recipeDetailViewController, animated: true)
     }
-
 }

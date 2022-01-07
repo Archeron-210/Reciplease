@@ -27,6 +27,7 @@ class RecipeTableViewCell: UITableViewCell {
         ingredientDetailsLabel.text = getIngredientsName(from: recipe.ingredients)
     }
 
+    // to obtain preview of ingredients to display in cells, we need to access the food property of each element in the ingredients array :
     private func getIngredientsName(from ingredientsArray: [IngredientDetail]) -> String {
         let ingredientsName = ingredientsArray.map(\.food)
         return ingredientsName.joined(separator: ", ")
