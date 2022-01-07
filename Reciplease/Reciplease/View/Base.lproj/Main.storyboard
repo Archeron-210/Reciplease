@@ -561,7 +561,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4B-0j-Ijl">
                                 <rect key="frame" x="20" y="797" width="374" height="45"/>
-                                <color key="backgroundColor" red="0.34162098169999999" green="0.57520991560000001" blue="0.38036242129999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.21176470588235294" green="0.20000000000000001" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="hpZ-6K-8Ke"/>
                                 </constraints>
