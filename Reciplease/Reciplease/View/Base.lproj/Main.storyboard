@@ -303,6 +303,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="jXq-XU-WRm" id="uwx-id-Mna"/>
+                                    <outlet property="delegate" destination="jXq-XU-WRm" id="Lhs-vD-6hC"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1dZ-pt-0ut"/>
@@ -315,6 +319,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reciplease" id="Yfv-5t-IZG"/>
+                    <connections>
+                        <outlet property="tableView" destination="HwM-Ta-z7b" id="ufr-MC-VaL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQO-fs-86Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -323,7 +330,7 @@
         <!--Favorite Detail-->
         <scene sceneID="MV5-9i-bkU">
             <objects>
-                <viewController id="8bq-7a-PLS" userLabel="Favorite Detail" customClass="FavoritesDetailsViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoriteDetailViewController" id="8bq-7a-PLS" userLabel="Favorite Detail" customClass="FavoritesDetailsViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n2B-7v-Ybr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

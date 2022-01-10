@@ -13,6 +13,8 @@ class FavoritesDetailsViewController: UIViewController {
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var servsAndTimeStackView: UIStackView!
 
+    var favoriteDetail: RecipeDetail?
+
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
