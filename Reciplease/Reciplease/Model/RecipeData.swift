@@ -29,6 +29,10 @@ struct RecipeDetail: Decodable {
     var imageUrl: URL? {
         return URL(string: image)
     }
+
+    var recipeUrl: URL? {
+        return URL(string: url)
+    }
 }
 
 struct IngredientDetail: Decodable {

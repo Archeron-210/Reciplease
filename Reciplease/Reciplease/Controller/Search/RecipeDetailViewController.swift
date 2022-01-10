@@ -25,6 +25,7 @@ class RecipeDetailViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func getDirectionsButtonTapped(_ sender: UIButton) {
+        goToWebsite()
     }
     
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
@@ -46,6 +47,13 @@ class RecipeDetailViewController: UIViewController {
         timeLabel.text = recipe.formatedTime
         recipeTitleLabel.text = recipe.label
         ingredientListTextView.text = ingredientListFormater(from: recipe.ingredientLines)
+    }
+
+    private func goToWebsite() {
+        guard let recipeUrl = recipeDetail?.recipeUrl else {
+            return
+        }
+        UIApplication.shared.open(recipeUrl, options: [:], completionHandler: nil)
     }
 
     private func ingredientListFormater(from ingredientListArray: [String]) -> String {
