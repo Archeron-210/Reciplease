@@ -7,6 +7,7 @@ target 'Reciplease' do
 
     # Pods for Reciplease
     pod 'Alamofire', '~> 5.5'
+    pod 'AlamofireImage', '~> 4.1'
 end
 
 target 'RecipleaseTests' do
