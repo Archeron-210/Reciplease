@@ -25,6 +25,10 @@ struct RecipeDetail: Decodable {
     var formatedServings: String {
         "\(Int(self.yield)) 🍴"
     }
+
+    var imageUrl: URL? {
+        return URL(string: image)
+    }
 }
 
 struct IngredientDetail: Decodable {

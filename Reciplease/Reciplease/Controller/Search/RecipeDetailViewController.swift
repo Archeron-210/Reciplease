@@ -37,9 +37,13 @@ class RecipeDetailViewController: UIViewController {
         guard let recipe = recipeDetail  else {
             return
         }
+        if let imageUrl = recipe.imageUrl {
+            recipePicture.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "default pic"))
+        } else {
+            recipePicture.image = UIImage(named: "default pic")
+        }
         servingsLabel.text = recipe.formatedServings
         timeLabel.text = recipe.formatedTime
-        recipePicture.image = UIImage(named: "default pic")
         recipeTitleLabel.text = recipe.label
         ingredientListTextView.text = ingredientListFormater(from: recipe.ingredientLines)
     }

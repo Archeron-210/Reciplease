@@ -1,6 +1,7 @@
 
 
 import UIKit
+import AlamofireImage
 
 class RecipeTableViewCell: UITableViewCell {
 
@@ -20,7 +21,12 @@ class RecipeTableViewCell: UITableViewCell {
     }
 
     func configure(with recipe: RecipeDetail) {
-        recipeImageView.image = UIImage(named: "default pic")
+        if let imageUrl = recipe.imageUrl {
+            recipeImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "default pic"))
+        } else {
+            recipeImageView.image = UIImage(named: "default pic")
+        }
+
         servingsLabel.text = recipe.formatedServings
         timeLabel.text = recipe.formatedTime
         recipeTitleLabel.text = recipe.label
