@@ -21,6 +21,7 @@ class RecipeDetailViewController: UIViewController {
 
         setInterfaceAspect()
         displayRecipeInfo()
+        updateFavoriteIcon()
     }
 
     // MARK: - Actions
@@ -33,7 +34,7 @@ class RecipeDetailViewController: UIViewController {
             return
         }
         FavoriteService.shared.add(recipe: recipe)
-        updateFavoriteIcon()
+        favoriteButton.isSelected.toggle()
     }
 
     // MARK: - Private functions
@@ -65,11 +66,10 @@ class RecipeDetailViewController: UIViewController {
     }
 
     private func updateFavoriteIcon() {
-        if !favoriteButton.isHighlighted {
-            favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .selected)
-        } else {
-            favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
-        }
+        let icon = UIImage(systemName: "star")
+        let iconFilled = UIImage(systemName: "star.fill")
+        favoriteButton.setImage(icon, for: .normal)
+            favoriteButton.setImage(iconFilled, for: .selected)
     }
 
 
