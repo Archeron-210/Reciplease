@@ -29,6 +29,10 @@ class RecipeDetailViewController: UIViewController {
     }
     
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
+        guard let recipe = recipeDetail  else {
+            return
+        }
+        FavoriteService.shared.add(recipe: recipe)
         updateFavoriteIcon()
     }
 
@@ -53,7 +57,7 @@ class RecipeDetailViewController: UIViewController {
         guard let recipeUrl = recipeDetail?.recipeUrl else {
             return
         }
-        UIApplication.shared.open(recipeUrl, options: [:], completionHandler: nil)
+        UIApplication.shared.open(recipeUrl)
     }
 
     private func ingredientListFormater(from ingredientListArray: [String]) -> String {

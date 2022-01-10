@@ -24,7 +24,6 @@
 		20E87A37277CB7A9005B3DB2 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E87A36277CB7A9005B3DB2 /* RecipesViewController.swift */; };
 		20E87A3C277CC33E005B3DB2 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E87A3B277CC33E005B3DB2 /* RecipeDetailViewController.swift */; };
 		20E87A4127833D28005B3DB2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E87A4027833D28005B3DB2 /* FavoritesViewController.swift */; };
-		20E87A4627833D42005B3DB2 /* FavoritesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E87A4527833D42005B3DB2 /* FavoritesDetailsViewController.swift */; };
 		20E87A57278491C1005B3DB2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E87A56278491C1005B3DB2 /* NetworkService.swift */; };
 		A70B1D4091A3950029CA74CC /* libPods-RecipleaseUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C03D87301BE7DB395BDE388 /* libPods-RecipleaseUITests.a */; };
 		D69DC7AC505A77DFFB0229E6 /* libPods-RecipleaseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0ECCB4DC4C147538AA1073 /* libPods-RecipleaseTests.a */; };
@@ -70,7 +69,6 @@
 		20E87A36277CB7A9005B3DB2 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecipesViewController.swift; path = Reciplease/Controller/Search/RecipesViewController.swift; sourceTree = SOURCE_ROOT; };
 		20E87A3B277CC33E005B3DB2 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecipeDetailViewController.swift; path = Reciplease/Controller/Search/RecipeDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		20E87A4027833D28005B3DB2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = Reciplease/Controller/Favorites/FavoritesViewController.swift; sourceTree = SOURCE_ROOT; };
-		20E87A4527833D42005B3DB2 /* FavoritesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDetailsViewController.swift; sourceTree = "<group>"; };
 		20E87A56278491C1005B3DB2 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5993D39590D4F8A31FD10157 /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68BF2485449A524CA741FE6A /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				20E87A4027833D28005B3DB2 /* FavoritesViewController.swift */,
-				20E87A4527833D42005B3DB2 /* FavoritesDetailsViewController.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -485,7 +482,6 @@
 				20E87A37277CB7A9005B3DB2 /* RecipesViewController.swift in Sources */,
 				20E87A3C277CC33E005B3DB2 /* RecipeDetailViewController.swift in Sources */,
 				20E879F0277C7956005B3DB2 /* SceneDelegate.swift in Sources */,
-				20E87A4627833D42005B3DB2 /* FavoritesDetailsViewController.swift in Sources */,
 				20BF3DEF2784A0C500064DC1 /* RecipeData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

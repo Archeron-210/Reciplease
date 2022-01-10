@@ -3,9 +3,11 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    var recipes: [RecipeDetail] {
+        FavoriteService.shared.favorites
+    }
 
-    var favorites: [RecipeDetail] = []
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,8 +15,6 @@ class FavoritesViewController: UIViewController {
         tableView.reloadData()
     }
     
-
-
 }
 
 extension FavoritesViewController: UITableViewDataSource {
@@ -23,7 +23,7 @@ extension FavoritesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favorites.count
+        return recipes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -31,7 +31,7 @@ extension FavoritesViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let favorite = favorites[indexPath.row]
+        let favorite = recipes[indexPath.row]
 
         cell.configure(with: favorite)
 
@@ -41,15 +41,15 @@ extension FavoritesViewController: UITableViewDataSource {
 }
 
 extension FavoritesViewController: UITableViewDelegate {
-    // segue to next controller to display favorite details when a cell is clicked :
+    // segue to next controller to display recipe details when a cell is clicked :
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        guard let favoriteDetailViewController = self.storyboard?.instantiateViewController(identifier: "FavoriteDetailViewController") as? FavoritesDetailsViewController else {
+        guard let recipeDetailViewController = self.storyboard?.instantiateViewController(identifier: "RecipeDetailViewController") as? RecipeDetailViewController else {
             return
         }
-        favoriteDetailViewController.favoriteDetail = favorites[indexPath.row]
-        self.navigationController?.pushViewController(favoriteDetailViewController, animated: true)
+        recipeDetailViewController.recipeDetail = recipes[indexPath.row]
+        self.navigationController?.pushViewController(recipeDetailViewController, animated: true)
     }
 }
 

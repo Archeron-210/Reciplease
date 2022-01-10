@@ -299,7 +299,6 @@
                                             <outlet property="servingsLabel" destination="skU-tE-N30" id="3OY-N2-Kfu"/>
                                             <outlet property="servsAndTimeStackView" destination="rvb-jj-u78" id="dbP-Op-bST"/>
                                             <outlet property="timeLabel" destination="80i-I7-8ix" id="Moy-Ut-27G"/>
-                                            <segue destination="8bq-7a-PLS" kind="show" id="qMe-gm-lSN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -326,134 +325,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQO-fs-86Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="666.66666666666674" y="632.8125"/>
-        </scene>
-        <!--Favorite Detail-->
-        <scene sceneID="MV5-9i-bkU">
-            <objects>
-                <viewController storyboardIdentifier="FavoriteDetailViewController" id="8bq-7a-PLS" userLabel="Favorite Detail" customClass="FavoritesDetailsViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="n2B-7v-Ybr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default pic" translatesAutoresizingMaskIntoConstraints="NO" id="dWm-cD-8IQ" userLabel="Picture">
-                                <rect key="frame" x="0.0" y="88" width="414" height="269"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="K2V-Hz-Rsy" userLabel="Gradient">
-                                <rect key="frame" x="0.0" y="88" width="414" height="269"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Dh8-Vv-sCj" userLabel="Likes and Time Stack View">
-                                <rect key="frame" x="325.5" y="98" width="78.5" height="78.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Servs 🍴" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxd-Yr-9Pq" userLabel="Servs Label">
-                                        <rect key="frame" x="0.0" y="0.0" width="78.5" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Time ⏱" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yG8-Pp-4yG">
-                                        <rect key="frame" x="0.0" y="37" width="78.5" height="41.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Dh8-Vv-sCj" secondAttribute="height" multiplier="1:1" id="Y1e-BZ-QEr"/>
-                                </constraints>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crq-pf-sFB">
-                                <rect key="frame" x="0.0" y="315" width="414" height="42"/>
-                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="M4a-Hg-2cC" userLabel="ingredients Stack View">
-                                <rect key="frame" x="20" y="367" width="374" height="374"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7h-bW-uYr">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
-                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="- - - -" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxg-dy-b2E" userLabel="Ingredients list">
-                                        <rect key="frame" x="0.0" y="39" width="374" height="335"/>
-                                        <color key="backgroundColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNN-7f-rav">
-                                <rect key="frame" x="20" y="748" width="374" height="45"/>
-                                <color key="backgroundColor" red="0.34162098169999999" green="0.57520991560000001" blue="0.38036242129999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="DJe-dh-ocz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="25"/>
-                                <state key="normal" title="Get directions">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="getDirectionsButtonTapped:" destination="8bq-7a-PLS" eventType="touchUpInside" id="nIN-0J-7Bj"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Bai-mP-OQl"/>
-                        <color key="backgroundColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="Bai-mP-OQl" firstAttribute="trailing" secondItem="gNN-7f-rav" secondAttribute="trailing" constant="20" id="4vk-Kc-87G"/>
-                            <constraint firstItem="dWm-cD-8IQ" firstAttribute="top" secondItem="Bai-mP-OQl" secondAttribute="top" id="9ly-DE-jQM"/>
-                            <constraint firstItem="M4a-Hg-2cC" firstAttribute="top" secondItem="dWm-cD-8IQ" secondAttribute="bottom" constant="10" id="GE5-EP-4Oz"/>
-                            <constraint firstItem="K2V-Hz-Rsy" firstAttribute="leading" secondItem="dWm-cD-8IQ" secondAttribute="leading" id="QRc-Yd-l62"/>
-                            <constraint firstItem="K2V-Hz-Rsy" firstAttribute="top" secondItem="dWm-cD-8IQ" secondAttribute="top" id="QfL-4B-sen"/>
-                            <constraint firstItem="gNN-7f-rav" firstAttribute="leading" secondItem="Bai-mP-OQl" secondAttribute="leading" constant="20" id="T6b-lh-S3U"/>
-                            <constraint firstItem="Bai-mP-OQl" firstAttribute="trailing" secondItem="M4a-Hg-2cC" secondAttribute="trailing" constant="20" id="cRV-KE-Nrv"/>
-                            <constraint firstItem="K2V-Hz-Rsy" firstAttribute="trailing" secondItem="dWm-cD-8IQ" secondAttribute="trailing" id="cgR-2X-o1e"/>
-                            <constraint firstItem="crq-pf-sFB" firstAttribute="trailing" secondItem="dWm-cD-8IQ" secondAttribute="trailing" id="eEK-RY-OHa"/>
-                            <constraint firstItem="M4a-Hg-2cC" firstAttribute="width" secondItem="M4a-Hg-2cC" secondAttribute="height" multiplier="1:1" id="ehT-Bg-nfD"/>
-                            <constraint firstItem="Dh8-Vv-sCj" firstAttribute="top" secondItem="Bai-mP-OQl" secondAttribute="top" constant="10" id="fkE-fy-iat"/>
-                            <constraint firstItem="Bai-mP-OQl" firstAttribute="trailing" secondItem="Dh8-Vv-sCj" secondAttribute="trailing" constant="10" id="goN-0Z-qHo"/>
-                            <constraint firstItem="dWm-cD-8IQ" firstAttribute="height" secondItem="n2B-7v-Ybr" secondAttribute="height" multiplier="0.3" id="gph-MS-4Pt"/>
-                            <constraint firstItem="crq-pf-sFB" firstAttribute="leading" secondItem="dWm-cD-8IQ" secondAttribute="leading" id="ie9-ib-IOO"/>
-                            <constraint firstItem="crq-pf-sFB" firstAttribute="bottom" secondItem="dWm-cD-8IQ" secondAttribute="bottom" id="kxj-Tv-fvG"/>
-                            <constraint firstItem="K2V-Hz-Rsy" firstAttribute="bottom" secondItem="dWm-cD-8IQ" secondAttribute="bottom" id="oa0-C0-frv"/>
-                            <constraint firstItem="dWm-cD-8IQ" firstAttribute="trailing" secondItem="Bai-mP-OQl" secondAttribute="trailing" id="qNJ-al-cNq"/>
-                            <constraint firstItem="M4a-Hg-2cC" firstAttribute="leading" secondItem="Bai-mP-OQl" secondAttribute="leading" constant="20" id="qPY-j5-Iq7"/>
-                            <constraint firstItem="dWm-cD-8IQ" firstAttribute="leading" secondItem="Bai-mP-OQl" secondAttribute="leading" id="tgu-kL-RIa"/>
-                            <constraint firstItem="Bai-mP-OQl" firstAttribute="bottom" secondItem="gNN-7f-rav" secondAttribute="bottom" constant="20" id="yhj-z7-wRu"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Reciplease" id="y3V-Ho-3Wf">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="3Jj-xE-KeX"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="ZII-IL-91g">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Xe-Ns-Hy5" userLabel="Favorite Button">
-                                <rect key="frame" x="266" y="0.0" width="128" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" image="star.fill" catalog="system"/>
-                                <connections>
-                                    <action selector="favoriteButtonTapped:" destination="8bq-7a-PLS" eventType="touchUpInside" id="PtC-aQ-Ais"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="favoriteButton" destination="8Xe-Ns-Hy5" id="6Yk-2V-dpn"/>
-                        <outlet property="getDirectionButton" destination="gNN-7f-rav" id="jOP-FA-Jdk"/>
-                        <outlet property="ingredientListTextView" destination="Hxg-dy-b2E" id="03I-IU-y06"/>
-                        <outlet property="likesLabel" destination="uxd-Yr-9Pq" id="F1R-1F-dI9"/>
-                        <outlet property="recipePicture" destination="dWm-cD-8IQ" id="11w-pl-9RV"/>
-                        <outlet property="recipeTitle" destination="crq-pf-sFB" id="Gf8-YM-ouc"/>
-                        <outlet property="servsAndTimeStackView" destination="Dh8-Vv-sCj" id="YWb-rL-g5n"/>
-                        <outlet property="timeLabel" destination="yG8-Pp-4yG" id="S5B-CE-iXL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="un5-xH-eZy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1428.985507246377" y="632.8125"/>
         </scene>
         <!--Recipes Results-->
         <scene sceneID="kAL-h2-erm">
@@ -710,7 +581,6 @@
         <image name="gradient" width="66.5" height="66.5"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="star" catalog="system" width="128" height="116"/>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
