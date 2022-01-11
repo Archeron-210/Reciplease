@@ -9,10 +9,19 @@ class FavoriteService {
     private(set) var favorites = [RecipeDetail]()
 
     func add(recipe: RecipeDetail) {
+        guard !isFavorite(recipe: recipe) else {
+            return
+        }
         favorites.append(recipe)
     }
 
     func delete(recipe: RecipeDetail) {
-       // favorites.remove(at: index)
+        if let index = favorites.firstIndex(of: recipe) {
+            favorites.remove(at: index)
+        }
+    }
+
+    func isFavorite(recipe: RecipeDetail) -> Bool {
+        return favorites.contains(recipe)
     }
 }

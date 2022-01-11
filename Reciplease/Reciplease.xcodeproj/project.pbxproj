@@ -182,10 +182,10 @@
 		20E87A28277C799C005B3DB2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				20BF3E28278C81E900064DC1 /* FavoriteService.swift */,
 				20E87A2A277C7C39005B3DB2 /* CoreData */,
-				20E87A56278491C1005B3DB2 /* NetworkService.swift */,
 				20BF3DEE2784A0C500064DC1 /* RecipeData.swift */,
+				20E87A56278491C1005B3DB2 /* NetworkService.swift */,
+				20BF3E28278C81E900064DC1 /* FavoriteService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
