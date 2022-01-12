@@ -1,5 +1,6 @@
 
 import UIKit
+import CoreData
 
 class FavoritesViewController: UIViewController {
 
@@ -7,7 +8,17 @@ class FavoritesViewController: UIViewController {
         FavoriteService.shared.favorites
     }
 
+    private let repository = FavoriteRecipeRepository()
+
+    var favoriteRecipes = [FavoriteRecipe]()
+
     @IBOutlet weak var tableView: UITableView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        favoriteRecipes = repository.getRecipes()
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,7 +33,7 @@ extension FavoritesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipes.count
+        return favoriteRecipes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -30,7 +41,7 @@ extension FavoritesViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let favorite = recipes[indexPath.row]
+        let favorite = favoriteRecipes[indexPath.row]
 
         cell.configure(with: favorite)
 
@@ -48,6 +59,7 @@ extension FavoritesViewController: UITableViewDelegate {
             return
         }
         recipeDetailViewController.recipeDetail = recipes[indexPath.row]
+        recipeDetailViewController.favoriteRecipeDetail = favoriteRecipes[indexPath.row]
         self.navigationController?.pushViewController(recipeDetailViewController, animated: true)
     }
 }

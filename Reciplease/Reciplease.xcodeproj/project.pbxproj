@@ -13,6 +13,8 @@
 		20BF3E24278C79C300064DC1 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BF3E23278C79C300064DC1 /* FavoriteTableViewCell.swift */; };
 		20BF3E29278C81E900064DC1 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BF3E28278C81E900064DC1 /* FavoriteService.swift */; };
 		20BF3E34278D93FD00064DC1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BF3E33278D93FD00064DC1 /* CoreDataStack.swift */; };
+		20BF3E39278DCC1100064DC1 /* FavoriteRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BF3E38278DCC1100064DC1 /* FavoriteRecipe.swift */; };
+		20BF3E3E278F241900064DC1 /* FavoriteRecipeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BF3E3D278F241900064DC1 /* FavoriteRecipeRepository.swift */; };
 		20E879EE277C7956005B3DB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E879ED277C7956005B3DB2 /* AppDelegate.swift */; };
 		20E879F0277C7956005B3DB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E879EF277C7956005B3DB2 /* SceneDelegate.swift */; };
 		20E879F5277C7956005B3DB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E879F3277C7956005B3DB2 /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		20BF3E23278C79C300064DC1 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		20BF3E28278C81E900064DC1 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoriteService.swift; path = Reciplease/Controller/Favorites/FavoriteService.swift; sourceTree = SOURCE_ROOT; };
 		20BF3E33278D93FD00064DC1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		20BF3E38278DCC1100064DC1 /* FavoriteRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipe.swift; sourceTree = "<group>"; };
+		20BF3E3D278F241900064DC1 /* FavoriteRecipeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeRepository.swift; sourceTree = "<group>"; };
 		20E879EA277C7956005B3DB2 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E879ED277C7956005B3DB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20E879EF277C7956005B3DB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				20BF3DEE2784A0C500064DC1 /* RecipeData.swift */,
 				20E87A56278491C1005B3DB2 /* NetworkService.swift */,
 				20BF3E28278C81E900064DC1 /* FavoriteService.swift */,
+				20BF3E38278DCC1100064DC1 /* FavoriteRecipe.swift */,
+				20BF3E3D278F241900064DC1 /* FavoriteRecipeRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -483,9 +489,11 @@
 				20BF3E34278D93FD00064DC1 /* CoreDataStack.swift in Sources */,
 				20E879EE277C7956005B3DB2 /* AppDelegate.swift in Sources */,
 				20E87A57278491C1005B3DB2 /* NetworkService.swift in Sources */,
+				20BF3E39278DCC1100064DC1 /* FavoriteRecipe.swift in Sources */,
 				20E87A37277CB7A9005B3DB2 /* RecipesViewController.swift in Sources */,
 				20E87A3C277CC33E005B3DB2 /* RecipeDetailViewController.swift in Sources */,
 				20E879F0277C7956005B3DB2 /* SceneDelegate.swift in Sources */,
+				20BF3E3E278F241900064DC1 /* FavoriteRecipeRepository.swift in Sources */,
 				20BF3DEF2784A0C500064DC1 /* RecipeData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

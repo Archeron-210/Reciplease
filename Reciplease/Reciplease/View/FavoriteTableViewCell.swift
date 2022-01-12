@@ -23,8 +23,8 @@ class FavoriteTableViewCell: UITableViewCell {
 
     // MARK: - Functions
 
-    func configure(with recipe: RecipeDetail) {
-        if let imageUrl = recipe.imageUrl {
+    func configure(with recipe: FavoriteRecipe) {
+        if let imageUrl = recipe.formatedImageUrl {
             recipeImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "default pic"))
         } else {
             recipeImageView.image = UIImage(named: "default pic")
@@ -32,14 +32,8 @@ class FavoriteTableViewCell: UITableViewCell {
 
         servingsLabel.text = recipe.formatedServings
         timeLabel.text = recipe.formatedTime
-        recipeTitleLabel.text = recipe.label
-        ingredientDetailsLabel.text = getIngredientsName(from: recipe.ingredients)
-    }
-
-    // to obtain preview of ingredients to display in cells, we need to access the food property of each element in the ingredients array :
-    private func getIngredientsName(from ingredientsArray: [IngredientDetail]) -> String {
-        let ingredientsName = ingredientsArray.map(\.food)
-        return ingredientsName.joined(separator: ", ")
+        recipeTitleLabel.text = recipe.recipeTitle
+        ingredientDetailsLabel.text = recipe.ingredientsPreview
     }
 
     private func setAspect() {

@@ -13,7 +13,10 @@ class RecipeDetailViewController: UIViewController {
     @IBOutlet weak var getDirectionsButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
 
+    private let repository = FavoriteRecipeRepository()
+
     var recipeDetail: RecipeDetail?
+    var favoriteRecipeDetail: FavoriteRecipe?
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -35,20 +38,22 @@ class RecipeDetailViewController: UIViewController {
     }
     
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
-        guard let recipe = recipeDetail  else {
+        guard let recipe = recipeDetail, let favoriteRecipe = favoriteRecipeDetail  else {
             return
         }
         let isAFavorite = FavoriteService.shared.isFavorite(recipe: recipe)
         if isAFavorite {
             FavoriteService.shared.delete(recipe: recipe)
+          repository.deleteRecipe(recipe: favoriteRecipe) 
+
         } else {
             FavoriteService.shared.add(recipe: recipe)
+            repository.saveRecipe(recipe: recipe)
         }
         setFavoriteIcon() 
     }
 
     // MARK: - Private functions
-
 
     private func displayRecipeInfo() {
         guard let recipe = recipeDetail  else {
