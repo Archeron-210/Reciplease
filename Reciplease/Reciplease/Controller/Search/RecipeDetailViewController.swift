@@ -17,8 +17,7 @@ class RecipeDetailViewController: UIViewController {
 
     private let repository = FavoriteRecipeRepository()
 
-    var recipeDetail: RecipeDetail?
-    var favoriteRecipeDetail: FavoriteRecipe?
+    var recipeFormated: RecipeFormated?
 
     // MARK: - Life Cycle
 
@@ -41,13 +40,13 @@ class RecipeDetailViewController: UIViewController {
     }
     
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
-        guard let recipe = recipeDetail, let favoriteRecipe = favoriteRecipeDetail  else {
+        guard let recipe = recipeFormated else {
             return
         }
 
-        let isAFavorite = repository.isFavorite(recipe: favoriteRecipe)
+        let isAFavorite = repository.isFavorite(recipe: recipe)
         if isAFavorite {
-          repository.deleteRecipe(recipe: favoriteRecipe)
+          repository.deleteRecipe(recipe: recipe)
         } else {
             repository.saveRecipe(recipe: recipe)
         }
@@ -57,7 +56,7 @@ class RecipeDetailViewController: UIViewController {
     // MARK: - Private
 
     private func displayRecipeInfo() {
-        guard let recipe = recipeDetail  else {
+        guard let recipe = recipeFormated  else {
             // display favorite recipe info ?
             return
         }
@@ -67,13 +66,13 @@ class RecipeDetailViewController: UIViewController {
             recipePicture.image = UIImage(named: "default pic")
         }
         servingsLabel.text = recipe.formatedServings
-        timeLabel.text = recipe.formatedTime
-        recipeTitleLabel.text = recipe.recipeTitle
-        ingredientListTextView.text = ingredientListFormater(from: recipe.ingredientLines)
+        timeLabel.text = recipe.formatedTotalTime
+        recipeTitleLabel.text = recipe.recipeName
+        ingredientListTextView.text = recipe.formatedIngredientLines
     }
 
     private func goToWebsite() {
-        guard let recipeUrl = recipeDetail?.recipeUrl else {
+        guard let recipeUrl = recipeFormated?.urlToDirections else {
             return
         }
         UIApplication.shared.open(recipeUrl)
@@ -86,12 +85,12 @@ class RecipeDetailViewController: UIViewController {
     // MARK: - UI Aspect
 
     private func setFavoriteIcon() {
-        guard let favoriteRecipe = favoriteRecipeDetail else {
+        guard let recipe = recipeFormated else {
             favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
             return
         }
 
-        let isFavorite = repository.isFavorite(recipe: favoriteRecipe)
+        let isFavorite = repository.isFavorite(recipe: recipe)
         let icon = isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
         favoriteButton.setImage(icon, for: .normal)
     }

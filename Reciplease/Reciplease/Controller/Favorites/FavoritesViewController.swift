@@ -10,7 +10,7 @@ class FavoritesViewController: UIViewController {
 
     // MARK: - Properties
 
-    var recipes: [FavoriteRecipe] {
+    var recipes: [RecipeFormated] {
         repository.getRecipes()
     }
 
@@ -54,7 +54,7 @@ extension FavoritesViewController: UITableViewDelegate {
         guard let recipeDetailViewController = self.storyboard?.instantiateViewController(identifier: "RecipeDetailViewController") as? RecipeDetailViewController else {
             return
         }
-        recipeDetailViewController.favoriteRecipeDetail = recipes[indexPath.row]
+        recipeDetailViewController.recipeFormated = recipes[indexPath.row]
         self.navigationController?.pushViewController(recipeDetailViewController, animated: true)
     }
 }

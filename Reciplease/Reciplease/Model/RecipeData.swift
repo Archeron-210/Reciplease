@@ -9,6 +9,10 @@ struct Recipe: Decodable {
     var recipe: RecipeDetail
 }
 
+struct IngredientDetail: Decodable {
+    var food: String
+}
+
 struct RecipeDetail: Decodable {
 
     var recipeTitle: String
@@ -18,23 +22,7 @@ struct RecipeDetail: Decodable {
     var ingredientLines: [String]
     var totalTime: Double
     var ingredientsPreview: [IngredientDetail]
-   
 
-    var formatedTime: String {
-        " \(Int(self.totalTime))min ⏱"
-    }
-
-    var formatedServings: String {
-        "\(Int(self.servings)) 🍴"
-    }
-
-    var imageUrl: URL? {
-        return URL(string: image)
-    }
-
-    var recipeUrl: URL? {
-        return URL(string: stringUrl)
-    }
 
     // setting coding keys to custom property names :
     private enum CodingKeys: String, CodingKey {
@@ -42,6 +30,35 @@ struct RecipeDetail: Decodable {
     }
 }
 
-struct IngredientDetail: Decodable {
-    var food: String
+extension RecipeDetail: RecipeFormated {
+    var urlToDirections: URL? {
+        return URL(string: stringUrl)
+    }
+
+    var imageUrl: URL? {
+        return URL(string: image)
+    }
+
+    var recipeName: String {
+        return recipeTitle
+    }
+
+    var formatedServings: String {
+      return " \(Int(servings)) 🍴"
+    }
+
+    var formatedIngredientLines: String {
+        return "- " + ingredientLines.joined(separator: "\n- ")
+    }
+
+    var formatedTotalTime: String {
+        return " \(Int(totalTime))min ⏱"
+    }
+
+    var formatedIngredientsPreview: String {
+        let ingredientsNames = ingredientsPreview.map(\.food)
+        return ingredientsNames.joined(separator: ", ")
+    }
+
+
 }

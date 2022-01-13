@@ -12,28 +12,19 @@ final class FavoriteRecipeRepository {
         self.coreDataStack = coreDataStack
     }
 
-    func getRecipes() -> [FavoriteRecipe] {
-
-        let request : NSFetchRequest<FavoriteRecipe> = FavoriteRecipe.fetchRequest()
-        do {
-            let favorites = try coreDataStack.viewContext.fetch(request)
-            return favorites
-        } catch {
-            return []
-        }
-
+    func getRecipes() -> [RecipeFormated] {
+        return getFavoriteRecipes()
     }
 
-    func saveRecipe(recipe: RecipeDetail) {
+    func saveRecipe(recipe: RecipeFormated) {
         let favoriteRecipe = FavoriteRecipe(context: CoreDataStack.shared.viewContext)
-        favoriteRecipe.image = recipe.image
-        favoriteRecipe.ingredientLines = ingredientListFormater(from: recipe.ingredientLines)
-        favoriteRecipe.ingredientsPreview = getIngredientsName(from: recipe.ingredientsPreview)
-        favoriteRecipe.recipeTitle = recipe.recipeTitle
-        favoriteRecipe.servings = recipe.servings
-        favoriteRecipe.totalTime = recipe.totalTime
-        favoriteRecipe.stringUrl = recipe.stringUrl
-
+        favoriteRecipe.image = recipe.imageUrl?.absoluteString
+        favoriteRecipe.ingredientLines = recipe.formatedIngredientLines
+        favoriteRecipe.ingredientsPreview = recipe.formatedIngredientsPreview
+        favoriteRecipe.recipeTitle = recipe.recipeName
+        favoriteRecipe.servings = recipe.formatedServings
+        favoriteRecipe.totalTime = recipe.formatedTotalTime
+        favoriteRecipe.stringUrl = recipe.urlToDirections?.absoluteString
         do {
             try coreDataStack.viewContext.save()
         } catch {
@@ -41,8 +32,15 @@ final class FavoriteRecipeRepository {
         }
     }
 
-    func deleteRecipe(recipe: FavoriteRecipe) {
-        coreDataStack.viewContext.delete(recipe)
+    func deleteRecipe(recipe: RecipeFormated) {
+        let searchRecipe = getFavoriteRecipes().first(where: { (favoriteRecipe) -> Bool in
+            return favoriteRecipe.recipeName == recipe.recipeName
+        })
+        guard let favoriteRecipe = searchRecipe else {
+            return
+        }
+
+        coreDataStack.viewContext.delete(favoriteRecipe)
 
         do {
             try coreDataStack.viewContext.save()
@@ -51,17 +49,20 @@ final class FavoriteRecipeRepository {
         }
     }
 
-    func isFavorite(recipe: FavoriteRecipe) -> Bool {
-        return getRecipes().contains(recipe)
+    func isFavorite(recipe: RecipeFormated) -> Bool {
+        let searchRecipe = getFavoriteRecipes().first(where: { (favoriteRecipe) -> Bool in
+            return favoriteRecipe.recipeName == recipe.recipeName
+        })
+        return searchRecipe != nil
     }
 
-    private func getIngredientsName(from ingredientsArray: [IngredientDetail]) -> String {
-        let ingredientsName = ingredientsArray.map(\.food)
-        return ingredientsName.joined(separator: ", ")
+    private func getFavoriteRecipes() -> [FavoriteRecipe] {
+        let request : NSFetchRequest<FavoriteRecipe> = FavoriteRecipe.fetchRequest()
+        do {
+            let favorites = try coreDataStack.viewContext.fetch(request)
+            return favorites
+        } catch {
+            return []
+        }
     }
-
-    private func ingredientListFormater(from ingredientListArray: [String]) -> String {
-        return "- " + ingredientListArray.joined(separator: "\n- ")
-    }
-
 }

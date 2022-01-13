@@ -51,7 +51,7 @@ extension RecipesViewController: UITableViewDelegate {
         guard let recipeDetailViewController = self.storyboard?.instantiateViewController(identifier: "RecipeDetailViewController") as? RecipeDetailViewController else {
             return
         }
-        recipeDetailViewController.recipeDetail = recipes[indexPath.row]
+        recipeDetailViewController.recipeFormated = recipes[indexPath.row]
         self.navigationController?.pushViewController(recipeDetailViewController, animated: true)
     }
 }

@@ -23,17 +23,17 @@ class FavoriteTableViewCell: UITableViewCell {
 
     // MARK: - Configure
 
-    func configure(with recipe: FavoriteRecipe) {
-        if let imageUrl = recipe.formatedImageUrl {
+    func configure(with recipe: RecipeFormated) {
+        if let imageUrl = recipe.imageUrl {
             recipeImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "default pic"))
         } else {
             recipeImageView.image = UIImage(named: "default pic")
         }
 
         servingsLabel.text = recipe.formatedServings
-        timeLabel.text = recipe.formatedTime
-        recipeTitleLabel.text = recipe.recipeTitle
-        ingredientDetailsLabel.text = recipe.ingredientsPreview
+        timeLabel.text = recipe.formatedTotalTime
+        recipeTitleLabel.text = recipe.recipeName
+        ingredientDetailsLabel.text = recipe.formatedIngredientsPreview
     }
 
     // MARK: - Private
