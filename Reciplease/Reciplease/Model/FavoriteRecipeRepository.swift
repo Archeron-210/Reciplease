@@ -34,7 +34,7 @@ final class FavoriteRecipeRepository {
 
     func deleteRecipe(recipe: RecipeFormated) {
         let searchRecipe = getFavoriteRecipes().first(where: { (favoriteRecipe) -> Bool in
-            return favoriteRecipe.recipeName == recipe.recipeName
+            return favoriteRecipe.id == recipe.id
         })
         guard let favoriteRecipe = searchRecipe else {
             return

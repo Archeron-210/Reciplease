@@ -3,6 +3,8 @@
 import Foundation
 
 protocol RecipeFormated {
+
+    var id: String {get}
     var recipeName: String {get}
     var imageUrl: URL? {get}
     var urlToDirections: URL? {get}

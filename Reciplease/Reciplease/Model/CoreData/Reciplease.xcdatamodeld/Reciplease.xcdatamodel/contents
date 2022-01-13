@@ -4,12 +4,13 @@
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="ingredientLines" optional="YES" attributeType="String" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
         <attribute name="ingredientsPreview" optional="YES" attributeType="String" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="rawIdentifer" optional="YES" attributeType="String"/>
         <attribute name="recipeTitle" optional="YES" attributeType="String"/>
         <attribute name="servings" optional="YES" attributeType="String"/>
         <attribute name="stringUrl" optional="YES" attributeType="String"/>
         <attribute name="totalTime" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="FavoriteRecipe" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="FavoriteRecipe" positionX="-63" positionY="-18" width="128" height="149"/>
     </elements>
 </model>

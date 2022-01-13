@@ -41,6 +41,10 @@ extension RecipesViewController: UITableViewDataSource {
 
         return cell
     }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        160.0
+    }
 }
 
 extension RecipesViewController: UITableViewDelegate {

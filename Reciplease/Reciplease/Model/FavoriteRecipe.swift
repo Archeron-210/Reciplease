@@ -9,6 +9,14 @@ class FavoriteRecipe: NSManagedObject {
 
 extension FavoriteRecipe: RecipeFormated {
 
+    var id: String {
+        guard let substring = rawIdentifer?.split(separator: "_").last else {
+            return ""
+        }
+        let idFormated = String(substring)
+        return idFormated
+    }
+
     var imageUrl: URL? {
         guard let imageUrl = image else {
             return nil

@@ -15,6 +15,7 @@ struct IngredientDetail: Decodable {
 
 struct RecipeDetail: Decodable {
 
+    var rawIdentifier: String
     var recipeTitle: String
     var image: String
     var stringUrl: String
@@ -26,7 +27,7 @@ struct RecipeDetail: Decodable {
 
     // setting coding keys to custom property names :
     private enum CodingKeys: String, CodingKey {
-        case recipeTitle = "label", image, stringUrl = "url", servings = "yield", ingredientLines, totalTime, ingredientsPreview = "ingredients"
+        case rawIdentifier = "uri", recipeTitle = "label", image, stringUrl = "url", servings = "yield", ingredientLines, totalTime, ingredientsPreview = "ingredients"
     }
 }
 
@@ -58,6 +59,14 @@ extension RecipeDetail: RecipeFormated {
     var formatedIngredientsPreview: String {
         let ingredientsNames = ingredientsPreview.map(\.food)
         return ingredientsNames.joined(separator: ", ")
+    }
+
+    var id: String {
+        guard let substring = rawIdentifier.split(separator: "_").last else {
+            return ""
+        }
+        let idFormated = String(substring)
+        return idFormated
     }
 
 
