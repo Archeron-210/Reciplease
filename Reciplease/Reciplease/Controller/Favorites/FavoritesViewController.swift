@@ -4,21 +4,17 @@ import CoreData
 
 class FavoritesViewController: UIViewController {
 
-    var recipes: [RecipeDetail] {
-        FavoriteService.shared.favorites
-    }
-
-    private let repository = FavoriteRecipeRepository()
-
-    var favoriteRecipes = [FavoriteRecipe]()
+// MARK: - Outlet
 
     @IBOutlet weak var tableView: UITableView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: - Properties
 
-        favoriteRecipes = repository.getRecipes()
+    var recipes: [FavoriteRecipe] {
+        repository.getRecipes()
     }
+
+    private let repository = FavoriteRecipeRepository()
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,7 +29,7 @@ extension FavoritesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoriteRecipes.count
+        return recipes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,7 +37,7 @@ extension FavoritesViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let favorite = favoriteRecipes[indexPath.row]
+        let favorite = recipes[indexPath.row]
 
         cell.configure(with: favorite)
 
@@ -58,8 +54,7 @@ extension FavoritesViewController: UITableViewDelegate {
         guard let recipeDetailViewController = self.storyboard?.instantiateViewController(identifier: "RecipeDetailViewController") as? RecipeDetailViewController else {
             return
         }
-        recipeDetailViewController.recipeDetail = recipes[indexPath.row]
-        recipeDetailViewController.favoriteRecipeDetail = favoriteRecipes[indexPath.row]
+        recipeDetailViewController.favoriteRecipeDetail = recipes[indexPath.row]
         self.navigationController?.pushViewController(recipeDetailViewController, animated: true)
     }
 }

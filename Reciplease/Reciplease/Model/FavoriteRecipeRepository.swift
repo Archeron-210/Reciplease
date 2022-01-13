@@ -4,6 +4,8 @@ import CoreData
 
 final class FavoriteRecipeRepository {
 
+    static let shared = FavoriteRecipeRepository()
+
     private let coreDataStack: CoreDataStack
 
     init(coreDataStack: CoreDataStack = CoreDataStack.shared) {
@@ -24,13 +26,13 @@ final class FavoriteRecipeRepository {
 
     func saveRecipe(recipe: RecipeDetail) {
         let favoriteRecipe = FavoriteRecipe(context: CoreDataStack.shared.viewContext)
-        favoriteRecipe.imageUrl = recipe.image
+        favoriteRecipe.image = recipe.image
         favoriteRecipe.ingredientLines = ingredientListFormater(from: recipe.ingredientLines)
-        favoriteRecipe.ingredientsPreview = getIngredientsName(from: recipe.ingredients)
-        favoriteRecipe.recipeTitle = recipe.label
-        favoriteRecipe.servings = recipe.yield
+        favoriteRecipe.ingredientsPreview = getIngredientsName(from: recipe.ingredientsPreview)
+        favoriteRecipe.recipeTitle = recipe.recipeTitle
+        favoriteRecipe.servings = recipe.servings
         favoriteRecipe.totalTime = recipe.totalTime
-        favoriteRecipe.urlToDirections = recipe.url
+        favoriteRecipe.stringUrl = recipe.stringUrl
 
         do {
             try coreDataStack.viewContext.save()
@@ -49,6 +51,10 @@ final class FavoriteRecipeRepository {
         }
     }
 
+    func isFavorite(recipe: FavoriteRecipe) -> Bool {
+        return getRecipes().contains(recipe)
+    }
+
     private func getIngredientsName(from ingredientsArray: [IngredientDetail]) -> String {
         let ingredientsName = ingredientsArray.map(\.food)
         return ingredientsName.joined(separator: ", ")
@@ -57,5 +63,5 @@ final class FavoriteRecipeRepository {
     private func ingredientListFormater(from ingredientListArray: [String]) -> String {
         return "- " + ingredientListArray.joined(separator: "\n- ")
     }
-    
+
 }

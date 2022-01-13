@@ -13,12 +13,15 @@ class RecipeDetailViewController: UIViewController {
     @IBOutlet weak var getDirectionsButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
 
+    // MARK: - Properties
+
     private let repository = FavoriteRecipeRepository()
 
     var recipeDetail: RecipeDetail?
     var favoriteRecipeDetail: FavoriteRecipe?
 
     // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,22 +44,21 @@ class RecipeDetailViewController: UIViewController {
         guard let recipe = recipeDetail, let favoriteRecipe = favoriteRecipeDetail  else {
             return
         }
-        let isAFavorite = FavoriteService.shared.isFavorite(recipe: recipe)
-        if isAFavorite {
-            FavoriteService.shared.delete(recipe: recipe)
-          repository.deleteRecipe(recipe: favoriteRecipe) 
 
+        let isAFavorite = repository.isFavorite(recipe: favoriteRecipe)
+        if isAFavorite {
+          repository.deleteRecipe(recipe: favoriteRecipe)
         } else {
-            FavoriteService.shared.add(recipe: recipe)
             repository.saveRecipe(recipe: recipe)
         }
         setFavoriteIcon() 
     }
 
-    // MARK: - Private functions
+    // MARK: - Private
 
     private func displayRecipeInfo() {
         guard let recipe = recipeDetail  else {
+            // display favorite recipe info ?
             return
         }
         if let imageUrl = recipe.imageUrl {
@@ -66,7 +68,7 @@ class RecipeDetailViewController: UIViewController {
         }
         servingsLabel.text = recipe.formatedServings
         timeLabel.text = recipe.formatedTime
-        recipeTitleLabel.text = recipe.label
+        recipeTitleLabel.text = recipe.recipeTitle
         ingredientListTextView.text = ingredientListFormater(from: recipe.ingredientLines)
     }
 
@@ -81,19 +83,18 @@ class RecipeDetailViewController: UIViewController {
         return "- " + ingredientListArray.joined(separator: "\n- ")
     }
 
+    // MARK: - UI Aspect
+
     private func setFavoriteIcon() {
-        guard let recipe = recipeDetail else {
+        guard let favoriteRecipe = favoriteRecipeDetail else {
             favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
             return
         }
 
-        let isFavorite = FavoriteService.shared.isFavorite(recipe: recipe)
+        let isFavorite = repository.isFavorite(recipe: favoriteRecipe)
         let icon = isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
         favoriteButton.setImage(icon, for: .normal)
     }
-
-
-    // MARK: - UI Aspect
 
     private func setInterfaceAspect() {
         getDirectionsButton.layer.cornerRadius = 10.0

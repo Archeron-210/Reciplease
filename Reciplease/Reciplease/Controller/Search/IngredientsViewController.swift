@@ -52,7 +52,7 @@ class IngredientsViewController: UIViewController {
         getRecipes()
     }
 
-    // MARK: - Private functions
+    // MARK: - Private
 
     private func addIngredientToList(_ ingredient: String) {
         ingredientList.append(ingredient)

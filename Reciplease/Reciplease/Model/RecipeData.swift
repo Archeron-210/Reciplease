@@ -9,14 +9,15 @@ struct Recipe: Decodable {
     var recipe: RecipeDetail
 }
 
-struct RecipeDetail: Decodable, Equatable {
-    var label: String
+struct RecipeDetail: Decodable {
+
+    var recipeTitle: String
     var image: String
-    var url: String
-    var yield: Double
+    var stringUrl: String
+    var servings: Double
     var ingredientLines: [String]
     var totalTime: Double
-    var ingredients: [IngredientDetail]
+    var ingredientsPreview: [IngredientDetail]
    
 
     var formatedTime: String {
@@ -24,7 +25,7 @@ struct RecipeDetail: Decodable, Equatable {
     }
 
     var formatedServings: String {
-        "\(Int(self.yield)) 🍴"
+        "\(Int(self.servings)) 🍴"
     }
 
     var imageUrl: URL? {
@@ -32,11 +33,12 @@ struct RecipeDetail: Decodable, Equatable {
     }
 
     var recipeUrl: URL? {
-        return URL(string: url)
+        return URL(string: stringUrl)
     }
 
-    static func ==(lhs: RecipeDetail, rhs: RecipeDetail) -> Bool {
-        return lhs.label == rhs.label
+    // setting coding keys to custom property names :
+    private enum CodingKeys: String, CodingKey {
+        case recipeTitle = "label", image, stringUrl = "url", servings = "yield", ingredientLines, totalTime, ingredientsPreview = "ingredients"
     }
 }
 

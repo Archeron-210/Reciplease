@@ -21,7 +21,7 @@ class FavoriteTableViewCell: UITableViewCell {
         setAspect()
     }
 
-    // MARK: - Functions
+    // MARK: - Configure
 
     func configure(with recipe: FavoriteRecipe) {
         if let imageUrl = recipe.formatedImageUrl {
@@ -35,6 +35,8 @@ class FavoriteTableViewCell: UITableViewCell {
         recipeTitleLabel.text = recipe.recipeTitle
         ingredientDetailsLabel.text = recipe.ingredientsPreview
     }
+
+    // MARK: - Private
 
     private func setAspect() {
         servsAndTimeStackView.layer.cornerRadius = 5.0

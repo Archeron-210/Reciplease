@@ -3,11 +3,15 @@ import UIKit
 
 class RecipesViewController: UIViewController {
 
+    // MARK: - Outlet
+
     @IBOutlet weak var tableView: UITableView!
     
-    
+    // MARK: - Property
+
     var recipes: [RecipeDetail] = []
 
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()

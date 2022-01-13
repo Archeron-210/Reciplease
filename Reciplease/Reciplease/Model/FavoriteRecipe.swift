@@ -13,14 +13,14 @@ class FavoriteRecipe: NSManagedObject {
     }
 
     var formatedImageUrl: URL? {
-        guard let image = imageUrl else {
+        guard let imageUrl = image else {
             return nil
         }
-        return URL(string: image)
+        return URL(string: imageUrl)
     }
 
     var recipeUrl: URL? {
-        guard let url = urlToDirections else {
+        guard let url = stringUrl else {
             return nil
         }
         return URL(string: url)
