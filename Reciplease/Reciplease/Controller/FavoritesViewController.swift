@@ -1,27 +1,31 @@
 
 import UIKit
+import CoreData
 
-class RecipesViewController: UIViewController {
+class FavoritesViewController: UIViewController {
 
-    // MARK: - Outlet
+// MARK: - Outlet
 
     @IBOutlet weak var tableView: UITableView!
-    
-    // MARK: - Property
 
-    var recipes: [RecipeDetail] = []
+    // MARK: - Properties
 
-    // MARK: - Life Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.reloadData()
-        // Do any additional setup after loading the view.
+    var recipes: [RecipeFormated] {
+        repository.getRecipes()
     }
 
+    private let repository = FavoriteRecipeRepository()
 
+    // MARK: - Life Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        tableView.reloadData()
+    }
 }
 
-extension RecipesViewController: UITableViewDataSource {
+extension FavoritesViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -35,19 +39,19 @@ extension RecipesViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let recipe = recipes[indexPath.row]
+        let favorite = recipes[indexPath.row]
 
-        cell.configure(with: recipe)
+        cell.configure(with: favorite)
 
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         160.0
     }
 }
 
-extension RecipesViewController: UITableViewDelegate {
+extension FavoritesViewController: UITableViewDelegate {
     // segue to next controller to display recipe details when a cell is clicked :
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -59,3 +63,5 @@ extension RecipesViewController: UITableViewDelegate {
         self.navigationController?.pushViewController(recipeDetailViewController, animated: true)
     }
 }
+
+

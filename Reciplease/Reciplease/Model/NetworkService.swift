@@ -35,11 +35,13 @@ class NetworkService {
         }
     }
 
-    func computeParameters(for ingredientList: [String]) -> Parameters {
-        let ingredientParam: String = computeIngredientParameter(ingredientList: ingredientList)
+    // MARK: - Private
+
+    private func computeParameters(for ingredientList: [String]) -> Parameters {
+        let ingredientParameter = computeIngredientParameter(ingredientList: ingredientList)
 
         let parameters: Parameters = [
-            "q": ingredientParam,
+            "q": ingredientParameter,
             "app_id": appID,
             "app_key": appKey,
             "type": type
@@ -49,7 +51,7 @@ class NetworkService {
     }
 
 
-    func computeIngredientParameter(ingredientList: [String]) -> String {
+    private func computeIngredientParameter(ingredientList: [String]) -> String {
         return ingredientList.joined(separator: ",")
     }
 }

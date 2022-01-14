@@ -2,10 +2,9 @@
 import Foundation
 import CoreData
 
-class FavoriteRecipe: NSManagedObject {
 
-    
-}
+class FavoriteRecipe: NSManagedObject {}
+
 
 extension FavoriteRecipe: RecipeFormated {
 
@@ -48,7 +47,7 @@ extension FavoriteRecipe: RecipeFormated {
 
     var formatedServings: String {
         guard let servingsString = servings else {
-            return "No image url"
+            return "N/A"
         }
         return servingsString
     }

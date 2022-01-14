@@ -1,6 +1,8 @@
 
 import Foundation
 
+// MARK: -  Data mapping from JSON response
+
 struct RecipeHit: Decodable {
     var hits: [Recipe]
 }
@@ -30,6 +32,9 @@ struct RecipeDetail: Decodable {
         case rawIdentifier = "uri", recipeTitle = "label", image, stringUrl = "url", servings = "yield", ingredientLines, totalTime, ingredientsPreview = "ingredients"
     }
 }
+
+
+// MARK: - Formating properties to conform to RecipeFormated protocol :
 
 extension RecipeDetail: RecipeFormated {
     var urlToDirections: URL? {

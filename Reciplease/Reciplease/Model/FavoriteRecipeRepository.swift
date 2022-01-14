@@ -4,13 +4,21 @@ import CoreData
 
 final class FavoriteRecipeRepository {
 
+    // MARK: - Singleton
+
     static let shared = FavoriteRecipeRepository()
 
+    // MARK: - Properties
+
     private let coreDataStack: CoreDataStack
+
+    // MARK: - Init
 
     init(coreDataStack: CoreDataStack = CoreDataStack.shared) {
         self.coreDataStack = coreDataStack
     }
+
+    // MARK: - Functions
 
     func getRecipes() -> [RecipeFormated] {
         return getFavoriteRecipes()
@@ -55,6 +63,8 @@ final class FavoriteRecipeRepository {
         })
         return searchRecipe != nil
     }
+
+    // MARK: - Private
 
     private func getFavoriteRecipes() -> [FavoriteRecipe] {
         let request : NSFetchRequest<FavoriteRecipe> = FavoriteRecipe.fetchRequest()
