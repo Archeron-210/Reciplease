@@ -31,6 +31,12 @@ extension FavoritesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if recipes.count == 0 {
+                self.tableView.setEmptyMessage("You do not have any favorite yet!\n🥘")
+            } else {
+                self.tableView.restore()
+            }
+
         return recipes.count
     }
 

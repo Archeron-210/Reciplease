@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0EBF1DE6B3CC90BD12A90824 /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5993D39590D4F8A31FD10157 /* Pods_Reciplease.framework */; };
+		2088ED522791D75C008D7C1F /* TableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088ED512791D75C008D7C1F /* TableView+Extension.swift */; };
 		20BF3DEF2784A0C500064DC1 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BF3DEE2784A0C500064DC1 /* RecipeData.swift */; };
 		20BF3E09278600D600064DC1 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BF3E08278600D600064DC1 /* RecipeTableViewCell.swift */; };
 		20BF3E34278D93FD00064DC1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BF3E33278D93FD00064DC1 /* CoreDataStack.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2088ED512791D75C008D7C1F /* TableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extension.swift"; sourceTree = "<group>"; };
 		20BF3DEE2784A0C500064DC1 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
 		20BF3E08278600D600064DC1 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		20BF3E33278D93FD00064DC1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				20E879F3277C7956005B3DB2 /* Main.storyboard */,
 				20BF3E08278600D600064DC1 /* RecipeTableViewCell.swift */,
+				2088ED512791D75C008D7C1F /* TableView+Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20E879F8277C7956005B3DB2 /* Reciplease.xcdatamodeld in Sources */,
+				2088ED522791D75C008D7C1F /* TableView+Extension.swift in Sources */,
 				20E87A32277CB68F005B3DB2 /* IngredientsViewController.swift in Sources */,
 				20E87A4127833D28005B3DB2 /* FavoritesViewController.swift in Sources */,
 				20BF3E57278F6EB000064DC1 /* RecipeFormated.swift in Sources */,
