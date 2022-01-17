@@ -10,24 +10,30 @@ import XCTest
 
 class RecipleaseTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let testRecipe: RecipeFormated = RecipeDetail(rawIdentifier: "http://www.edamam.com/ontologies/edamam.owl#recipe_b79327d05b8e5b838ad6cfd9576b30b6", recipeTitle: "Chicken Vesuvio", image: "https://www.edamam.com/web-img/e42/e42f9119813e890af34c259785ae1cfb.jpg", stringUrl: "http://www.seriouseats.com/recipes/2011/12/chicken-vesuvio-recipe.html", servings: 4.0, ingredientLines: [
+                                    "1/2 cup olive oil",
+                                    "5 cloves garlic, peeled",
+                                    "2 large russet potatoes, peeled and cut into chunks",
+                                    "1 3-4 pound chicken, cut into 8 pieces (or 3 pound chicken legs)"],
+                                  totalTime: 60.0, ingredientsPreview: [IngredientDetail(food: "chicken"), IngredientDetail(food: "olive oil"), IngredientDetail(food: "garlic"), IngredientDetail(food: "potatoes")])
+
+    func testGivenRecipeHasARawIdentifier_WhenConformingToProtocol_ThenRecipeHasAnID() {
+        XCTAssertEqual(testRecipe.id, "b79327d05b8e5b838ad6cfd9576b30b6")
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testGivenRecipeHasServings_WhenConformingToProtocol_ThenServingsAreFormated() {
+        XCTAssertEqual(testRecipe.formatedServings, " 4 🍴")
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGivenRecipeHasIngredientLines_WhenConformingToProtocol_ThenIngredientLinesAreFormated() {
+        XCTAssertEqual(testRecipe.formatedIngredientLines, "- 1/2 cup olive oil\n- 5 cloves garlic, peeled\n- 2 large russet potatoes, peeled and cut into chunks\n- 1 3-4 pound chicken, cut into 8 pieces (or 3 pound chicken legs)")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testGivenRecipeHasATotalTime_WhenConformingToProtocol_ThenTotalTimeIsFormated() {
+        XCTAssertEqual(testRecipe.formatedTotalTime, " 60min ⏱")
     }
 
+    func testGivenRecipeHasIngredientsPreview_WhenConformingToProtocol_ThenIngredientsPreviewIsFormated() {
+        XCTAssertEqual(testRecipe.formatedIngredientsPreview, "chicken, olive oil, garlic, potatoes")
+    }
 }

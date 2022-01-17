@@ -1,16 +1,21 @@
 
 import Foundation
-import Alamofire
 
-class NetworkService {
+class RecipeService {
 
     // MARK: - Singleton
 
-    static let shared = NetworkService()
+    static let shared = RecipeService()
+
+    // MARK: - Properties
+
+    private let networkService: NetworkProtocol
 
     // MARK: - Init
 
-    private init() {}
+    init(networkService: NetworkProtocol = NetworkService()) {
+        self.networkService = networkService
+    }
 
     // MARK: - Properties
 
@@ -21,10 +26,11 @@ class NetworkService {
 
     // MARK: - Functions
 
-    func getRecipes(ingredientList: [String], completion: @escaping (Result<[RecipeDetail], AFError>) -> Void) {
+    func getRecipes(ingredientList: [String], completion: @escaping (Result<[RecipeDetail], Error>) -> Void) {
         let parameters = computeParameters(for: ingredientList)
-        AF.request(baseURL, parameters: parameters).responseDecodable(of: RecipeHit.self) { (response) in
-            switch response.result {
+
+        networkService.request(baseURL: baseURL, parameters: parameters) { (result: Result<RecipeHit, Error>) in
+            switch result {
             case .success(let recipeHit):
                 // create a copy in which we can access directly the recipe details :
                 let recipeDetails = recipeHit.hits.map(\.recipe)
@@ -37,10 +43,10 @@ class NetworkService {
 
     // MARK: - Private
 
-    private func computeParameters(for ingredientList: [String]) -> Parameters {
+    private func computeParameters(for ingredientList: [String]) -> [String: Any] {
         let ingredientParameter = computeIngredientParameter(ingredientList: ingredientList)
 
-        let parameters: Parameters = [
+        let parameters: [String: Any] = [
             "q": ingredientParameter,
             "app_id": appID,
             "app_key": appKey,

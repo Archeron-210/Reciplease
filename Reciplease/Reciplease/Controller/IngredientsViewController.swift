@@ -29,10 +29,7 @@ class IngredientsViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func addButtonTapped(_ sender: UIButton) {
-        guard let ingredient = ingredientTextField.text else {
-            return
-        }
-        guard ingredient != "" else {
+        guard let ingredient = ingredientTextField.text, !ingredient.isEmpty else {
             emptyTextFieldAlert()
             return
         }
@@ -70,7 +67,7 @@ class IngredientsViewController: UIViewController {
 
     private func getRecipes() {
         toggleActivityIndicator(shown: true)
-        NetworkService.shared.getRecipes(ingredientList: ingredientList) { result in
+        RecipeService.shared.getRecipes(ingredientList: ingredientList) { result in
             self.toggleActivityIndicator(shown: false)
             switch result {
             case .success(let recipeDetails):
