@@ -1,21 +1,12 @@
-//
-//  RecipleaseTests.swift
-//  RecipleaseTests
-//
-//  Created by Archeron on 29/12/2021.
-//
 
 import XCTest
 @testable import Reciplease
 
 class RecipleaseTests: XCTestCase {
 
-    let testRecipe: RecipeFormated = RecipeDetail(rawIdentifier: "http://www.edamam.com/ontologies/edamam.owl#recipe_b79327d05b8e5b838ad6cfd9576b30b6", recipeTitle: "Chicken Vesuvio", image: "https://www.edamam.com/web-img/e42/e42f9119813e890af34c259785ae1cfb.jpg", stringUrl: "http://www.seriouseats.com/recipes/2011/12/chicken-vesuvio-recipe.html", servings: 4.0, ingredientLines: [
-                                    "1/2 cup olive oil",
-                                    "5 cloves garlic, peeled",
-                                    "2 large russet potatoes, peeled and cut into chunks",
-                                    "1 3-4 pound chicken, cut into 8 pieces (or 3 pound chicken legs)"],
-                                  totalTime: 60.0, ingredientsPreview: [IngredientDetail(food: "chicken"), IngredientDetail(food: "olive oil"), IngredientDetail(food: "garlic"), IngredientDetail(food: "potatoes")])
+    let testIngredientsList = ["chicken", "tomatoes"]
+
+    let testRecipe = FakeRecipes.correctRecipeDetail()
 
     func testGivenRecipeHasARawIdentifier_WhenConformingToProtocol_ThenRecipeHasAnID() {
         XCTAssertEqual(testRecipe.id, "b79327d05b8e5b838ad6cfd9576b30b6")
@@ -35,5 +26,20 @@ class RecipleaseTests: XCTestCase {
 
     func testGivenRecipeHasIngredientsPreview_WhenConformingToProtocol_ThenIngredientsPreviewIsFormated() {
         XCTAssertEqual(testRecipe.formatedIngredientsPreview, "chicken, olive oil, garlic, potatoes")
+    }
+
+    func testTrucNetwork() {
+        let recipeService = RecipeService(networkService: FakeNetworkService(), configuration: FakeConfiguration.recipesCorrect)
+
+        recipeService.getRecipes(ingredientList: testIngredientsList) { (result: Result<[RecipeDetail], NetworkError>) in
+            // Then
+            switch result {
+            case .failure:
+                XCTFail("Request should not fail")
+            case .success(let result):
+                XCTAssertNotNil(result)
+                XCTAssertEqual(result.count, 20)
+            }
+        }
     }
 }
