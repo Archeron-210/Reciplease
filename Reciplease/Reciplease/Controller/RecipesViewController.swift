@@ -26,6 +26,11 @@ extension RecipesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if recipes.count == 0 {
+                self.tableView.setEmptyMessage("Sorry, we were unable to find matching results \nfor your search, please try again after checking your spelling !\n🥘")
+            } else {
+                self.tableView.restore()
+            }
         return recipes.count
     }
 

@@ -1,9 +1,3 @@
-//
-//  FakeRecipes.swift
-//  RecipleaseTests
-//
-//  Created by Archeron on 17/01/2022.
-//
 
 import Foundation
 @testable import Reciplease
