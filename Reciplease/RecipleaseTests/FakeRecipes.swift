@@ -3,7 +3,7 @@ import Foundation
 @testable import Reciplease
 
 class FakeRecipes {
-    static func fakeRecipeDetail() -> RecipeFormated {
+    static func correctRecipeDetail() -> RecipeFormated {
         return RecipeDetail(rawIdentifier: "http://www.edamam.com/ontologies/edamam.owl#recipe_b79327d05b8e5b838ad6cfd9576b30b6", recipeTitle: "Chicken Vesuvio", image: "https://www.edamam.com/web-img/e42/e42f9119813e890af34c259785ae1cfb.jpg", stringUrl: "http://www.seriouseats.com/recipes/2011/12/chicken-vesuvio-recipe.html", servings: 4.0, ingredientLines: [
                                         "1/2 cup olive oil",
                                         "5 cloves garlic, peeled",
@@ -18,3 +18,6 @@ class FakeRecipes {
         return favoriteRecipe
     }
 }
+
+
+
