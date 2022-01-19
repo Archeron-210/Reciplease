@@ -3,7 +3,7 @@ import Foundation
 @testable import Reciplease
 
 class FakeNetworkService: NetworkProtocol {
-    func request<T: Decodable>(baseURL: String, parameters: [String : Any], completion: @escaping (Result<T, NetworkError>) -> Void) {
+    func request<T: Decodable>(baseURL: String, parameters: [String : Any], completion: @escaping (Result<T, Error>) -> Void) {
         let bundle = Bundle(for: FakeNetworkService.self)
         let url = bundle.url(forResource: baseURL, withExtension: "json")!
         let jsonData = try! Data(contentsOf: url)

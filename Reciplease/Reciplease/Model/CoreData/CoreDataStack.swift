@@ -2,11 +2,11 @@
 import Foundation
 import CoreData
 
-final class CoreDataStack {
+class CoreDataStack {
 
     // MARK: - Properties
 
-    private let persistentContainerName = "Reciplease"
+    static let modelName = "Reciplease"
 
     // MARK: - Singleton
 
@@ -20,10 +20,10 @@ final class CoreDataStack {
 
     // MARK: - Private
 
-    private init() {}
+    init() {}
 
-    private lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: persistentContainerName)
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: CoreDataStack.modelName)
         container.loadPersistentStores { storeDescription, error in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo) for : \(storeDescription.description)")

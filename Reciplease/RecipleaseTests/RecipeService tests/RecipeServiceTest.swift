@@ -12,7 +12,7 @@ class RecipeServiceTest: XCTestCase {
     func testGetRecipesShouldCompleteSuccessfullyWithRecipesIfNoError() {
         let recipeService = RecipeService(networkService: FakeNetworkService(), configuration: FakeConfiguration.recipesCorrect)
 
-        recipeService.getRecipes(ingredientList: testIngredientsList) { (result: Result<[RecipeDetail], NetworkError>) in
+        recipeService.getRecipes(ingredientList: testIngredientsList) { (result: Result<[RecipeDetail], Error>) in
             // Then
             switch result {
             case .failure:
