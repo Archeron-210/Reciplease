@@ -2,9 +2,7 @@
 import XCTest
 @testable import Reciplease
 
-class RecipeFormatedTests: XCTestCase {
-
-    // We test in this class if everything is correctly formated in our model
+class RecipeDetailFormatedTests: XCTestCase {
 
     let testRecipe = FakeRecipes.correctRecipeDetail()
 
