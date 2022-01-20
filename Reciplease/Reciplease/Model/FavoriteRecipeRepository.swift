@@ -25,7 +25,10 @@ final class FavoriteRecipeRepository {
     }
 
     func saveRecipe(recipe: RecipeFormated) {
-        let favoriteRecipe = FavoriteRecipe(context: CoreDataStack.shared.viewContext)
+        guard !isFavorite(recipe: recipe) else {
+            return
+        }
+        let favoriteRecipe = FavoriteRecipe(context: coreDataStack.viewContext)
         favoriteRecipe.image = recipe.imageUrl?.absoluteString
         favoriteRecipe.ingredientLines = recipe.formatedIngredientLines
         favoriteRecipe.ingredientsPreview = recipe.formatedIngredientsPreview
@@ -33,6 +36,8 @@ final class FavoriteRecipeRepository {
         favoriteRecipe.servings = recipe.formatedServings
         favoriteRecipe.totalTime = recipe.formatedTotalTime
         favoriteRecipe.stringUrl = recipe.urlToDirections?.absoluteString
+        favoriteRecipe.rawIdentifer = recipe.id
+
         do {
             try coreDataStack.viewContext.save()
         } catch {
@@ -44,6 +49,7 @@ final class FavoriteRecipeRepository {
         let searchRecipe = getFavoriteRecipes().first(where: { (favoriteRecipe) -> Bool in
             return favoriteRecipe.id == recipe.id
         })
+        // Unwrapping search result :
         guard let favoriteRecipe = searchRecipe else {
             return
         }
@@ -59,7 +65,7 @@ final class FavoriteRecipeRepository {
 
     func isFavorite(recipe: RecipeFormated) -> Bool {
         let searchRecipe = getFavoriteRecipes().first(where: { (favoriteRecipe) -> Bool in
-            return favoriteRecipe.recipeName == recipe.recipeName
+            return favoriteRecipe.id == recipe.id
         })
         return searchRecipe != nil
     }
