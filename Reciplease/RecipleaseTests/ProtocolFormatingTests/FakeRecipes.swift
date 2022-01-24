@@ -25,14 +25,14 @@ class FakeRecipes {
 
     static func incorrectRecipeDetail() -> RecipeFormated {
         return RecipeDetail(
-            rawIdentifier: "http://www.edamam.com/ontologies/edamam.owl#recipeb79327d05b8e5b838ad6cfd9576b30b6",
+            rawIdentifier: "",
             recipeTitle: "",
-            image: "www.edamam.com/web-img/e42/e42f9119813e890af34c259785ae1cfb.jpg",
-            stringUrl: "www.seriouseats.com/recipes/2011/12/chicken-vesuvio-recipe.html",
+            image: "",
+            stringUrl: "",
             servings: 0,
             ingredientLines: [],
             totalTime: 0,
-            ingredientsPreview: [IngredientDetail(food: "")]
+            ingredientsPreview: []
         )
     }
 }

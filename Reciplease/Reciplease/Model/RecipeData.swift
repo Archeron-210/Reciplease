@@ -46,6 +46,9 @@ extension RecipeDetail: RecipeFormated {
     }
 
     var recipeName: String {
+        guard recipeTitle != "" else {
+            return DefaultString.recipeTitle
+        }
         return recipeTitle
     }
 

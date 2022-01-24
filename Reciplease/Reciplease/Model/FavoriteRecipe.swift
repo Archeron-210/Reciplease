@@ -9,10 +9,9 @@ class FavoriteRecipe: NSManagedObject {}
 extension FavoriteRecipe: RecipeFormated {
 
     var id: String {
-        guard let substring = rawIdentifer?.split(separator: "_").last else {
-            return "No ID available"
+        guard let idFormated = rawIdentifer else {
+            return DefaultString.id
         }
-        let idFormated = String(substring)
         return idFormated
     }
 
@@ -32,50 +31,50 @@ extension FavoriteRecipe: RecipeFormated {
 
 
     var recipeName: String {
-        guard let recipeName = recipeTitle else {
-            return "No title"
+        guard let recipeName = recipeTitle, !recipeName.isEmpty else {
+            return DefaultString.recipeTitle
         }
         return recipeName
     }
 
     var imageRawUrl: String {
         guard let imageString = image else {
-            return "No image url"
+            return DefaultString.rawImageUrl
         }
         return imageString
     }
 
     var formatedServings: String {
         guard let servingsString = servings else {
-            return "N/A"
+            return DefaultString.servings
         }
         return servingsString
     }
 
     var rawUrlToDirections: String {
         guard let stringUrlToDirections = stringUrl else {
-            return "No directions url"
+            return DefaultString.rawUrlToDirections
         }
         return stringUrlToDirections
     }
 
     var formatedIngredientLines: String {
         guard let stringIngredientLines = ingredientLines else {
-            return "No instructions"
+            return DefaultString.ingredientLines
         }
         return stringIngredientLines
     }
 
     var formatedTotalTime: String {
         guard let totalTimeString = totalTime else {
-            return "N/A"
+            return DefaultString.totalTime
         }
         return totalTimeString
     }
 
     var formatedIngredientsPreview: String {
         guard let stringIngredientsPreview = ingredientsPreview else {
-            return "No ingredients preview"
+            return DefaultString.ingredientsPreview
         }
         return stringIngredientsPreview
     }

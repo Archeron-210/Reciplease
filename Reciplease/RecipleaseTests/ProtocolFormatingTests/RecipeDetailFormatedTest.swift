@@ -43,14 +43,26 @@ class RecipeDetailFormatedTests: XCTestCase {
 
     // MARK: - Incorrect Recipe Tests
 
-    func testGivenRecipeRawIdentifierIsIncorrect_WhenConformingToProtocol_ThenErrorStringIsReturned() {
+    func testGivenRecipeRawIdentifierIsIncorrect_WhenConformingToProtocol_ThenDefaultStringIsReturned() {
         XCTAssertEqual(incorrectTestRecipe.id, DefaultString.id)
-
     }
 
-//    func testGivenRecipeServingsAreZero_WhenConformingToProtocol_ThenServingsAreNotAvailable() {
-//
-//    }
-    
+    func testGivenRecipeTitleIsEmpty_WhenConformingToProtocol_ThenDefaultStringIsReturned() {
+        XCTAssertEqual(incorrectTestRecipe.recipeName, DefaultString.recipeTitle)
+    }
+    func testGivenRecipeServingsAreZero_WhenConformingToProtocol_ThenDefaultStringIsReturned() {
+        XCTAssertEqual(incorrectTestRecipe.formatedServings, DefaultString.servings)
+    }
+
+    func testGivenRecipeTotalTimeIsZero_WhenConformingToProtocol_ThenDefaultStringIsReturned() {
+        XCTAssertEqual(incorrectTestRecipe.formatedTotalTime, DefaultString.totalTime)
+    }
+
+    func testGivenRecipeHasNoIngredientLines_WhenConformingToProtocol_ThenDefaultStringIsReturned() {
+        XCTAssertEqual(incorrectTestRecipe.formatedIngredientLines, DefaultString.ingredientLines)
+    }
+    func testGivenRecipeHasNoIngredientsPreview_WhenConformingToProtocol_ThenDefaultStringIsReturned() {
+        XCTAssertEqual(incorrectTestRecipe.formatedIngredientsPreview, DefaultString.ingredientsPreview)
+    }
 
 }

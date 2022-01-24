@@ -23,4 +23,18 @@ class RecipeServiceTest: XCTestCase {
             }
         }
     }
+
+    func testGetRecipesShouldFailWithErrorIfIncorrectData() {
+        let recipeService = RecipeService(networkService: FakeNetworkService(), configuration: FakeConfiguration.recipesIncorrect)
+
+        recipeService.getRecipes(ingredientList: testIngredientsList) { (result: Result<[RecipeDetail], Error>) in
+            // Then
+            switch result {
+            case .failure(let error):
+                XCTAssertNotNil(error)
+            case .success:
+                XCTFail("Request should not succeed")
+            }
+        }
+    }
 }

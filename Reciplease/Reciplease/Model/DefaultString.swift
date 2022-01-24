@@ -8,5 +8,6 @@ struct DefaultString {
     static let ingredientLines = "- No ingredient lines to display"
     static let ingredientsPreview = "No ingredients preview"
     static let id = "No ID available"
-    
+    static let rawImageUrl = "No image URL"
+    static let rawUrlToDirections = "No directions URL"
 }

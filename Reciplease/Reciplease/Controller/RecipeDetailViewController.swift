@@ -73,13 +73,19 @@ class RecipeDetailViewController: UIViewController {
 
     private func goToWebsite() {
         guard let recipeUrl = recipeFormated?.urlToDirections else {
+            urlErrorAlert()
             return
         }
         UIApplication.shared.open(recipeUrl)
     }
 
-    private func ingredientListFormater(from ingredientListArray: [String]) -> String {
-        return "- " + ingredientListArray.joined(separator: "\n- ")
+    // MARK: - Alert
+
+    private func urlErrorAlert() {
+        let alert = UIAlertController(title: "⚠️", message: "Sorry, it seems like this recipe URL is broken 🔌", preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(actionAlert)
+        present(alert, animated: true, completion: nil)
     }
 
     // MARK: - UI Aspect
