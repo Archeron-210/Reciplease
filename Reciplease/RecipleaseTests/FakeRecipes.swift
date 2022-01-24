@@ -22,11 +22,25 @@ class FakeRecipes {
             ingredientsPreview: [IngredientDetail(food: "chicken"), IngredientDetail(food: "olive oil"), IngredientDetail(food: "garlic"), IngredientDetail(food: "potatoes")]
         )
     }
+
+    static func incorrectRecipeDetail() -> RecipeFormated {
+        return RecipeDetail(
+            rawIdentifier: "http://www.edamam.com/ontologies/edamam.owl#recipeb79327d05b8e5b838ad6cfd9576b30b6",
+            recipeTitle: "",
+            image: "www.edamam.com/web-img/e42/e42f9119813e890af34c259785ae1cfb.jpg",
+            stringUrl: "www.seriouseats.com/recipes/2011/12/chicken-vesuvio-recipe.html",
+            servings: 0,
+            ingredientLines: [],
+            totalTime: 0,
+            ingredientsPreview: [IngredientDetail(food: "")]
+        )
+    }
 }
 
 
 
 class FakeFavoriteRecipe {
+
     static func correctFavoriteRecipe(coreDataStack: CoreDataStack, repository: FavoriteRecipeRepository) -> FavoriteRecipe {
 
         let recipe = FakeRecipes.correctRecipeDetail()
@@ -44,4 +58,24 @@ class FakeFavoriteRecipe {
 
         return favoriteRecipe
     }
+
+    static func incorrectFavoriteRecipe(coreDataStack: CoreDataStack, repository: FavoriteRecipeRepository) -> FavoriteRecipe {
+
+        let recipe = FakeRecipes.incorrectRecipeDetail()
+        let wrongFavoriteRecipe = FavoriteRecipe(context: coreDataStack.viewContext)
+        wrongFavoriteRecipe.image = recipe.imageUrl?.absoluteString
+        wrongFavoriteRecipe.ingredientLines = recipe.formatedIngredientLines
+        wrongFavoriteRecipe.ingredientsPreview = recipe.formatedIngredientsPreview
+        wrongFavoriteRecipe.recipeTitle = recipe.recipeName
+        wrongFavoriteRecipe.servings = recipe.formatedServings
+        wrongFavoriteRecipe.totalTime = recipe.formatedTotalTime
+        wrongFavoriteRecipe.stringUrl = recipe.urlToDirections?.absoluteString
+        wrongFavoriteRecipe.rawIdentifer = recipe.id
+
+        repository.saveRecipe(recipe: wrongFavoriteRecipe)
+
+        return wrongFavoriteRecipe
+    }
+
+
 }

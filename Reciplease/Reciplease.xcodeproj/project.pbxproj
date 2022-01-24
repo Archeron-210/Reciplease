@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0EBF1DE6B3CC90BD12A90824 /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5993D39590D4F8A31FD10157 /* Pods_Reciplease.framework */; };
+		20152D3C279EBF260066C35E /* DefaultString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20152D3B279EBF260066C35E /* DefaultString.swift */; };
 		2058A8FB2799CA4500A33496 /* FavoriteRecipeFormatedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058A8FA2799CA4500A33496 /* FavoriteRecipeFormatedTests.swift */; };
 		2088ED522791D75C008D7C1F /* TableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088ED512791D75C008D7C1F /* TableView+Extension.swift */; };
 		2088ED672795E310008D7C1F /* FakeRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088ED662795E310008D7C1F /* FakeRecipes.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20152D3B279EBF260066C35E /* DefaultString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultString.swift; sourceTree = "<group>"; };
 		2058A8FA2799CA4500A33496 /* FavoriteRecipeFormatedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeFormatedTests.swift; sourceTree = "<group>"; };
 		2088ED512791D75C008D7C1F /* TableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extension.swift"; sourceTree = "<group>"; };
 		2088ED662795E310008D7C1F /* FakeRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeRecipes.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			children = (
 				20BF3E56278F6EB000064DC1 /* RecipeFormated.swift */,
 				20BF3DEE2784A0C500064DC1 /* RecipeData.swift */,
+				20152D3B279EBF260066C35E /* DefaultString.swift */,
 				2088ED6B2795E5D3008D7C1F /* NetworkProtocol.swift */,
 				20E87A56278491C1005B3DB2 /* RecipeService.swift */,
 				20E87A2A277C7C39005B3DB2 /* CoreData */,
@@ -422,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20E879F8277C7956005B3DB2 /* Reciplease.xcdatamodeld in Sources */,
+				20152D3C279EBF260066C35E /* DefaultString.swift in Sources */,
 				2088ED522791D75C008D7C1F /* TableView+Extension.swift in Sources */,
 				20E87A32277CB68F005B3DB2 /* IngredientsViewController.swift in Sources */,
 				20E87A4127833D28005B3DB2 /* FavoritesViewController.swift in Sources */,

@@ -50,25 +50,37 @@ extension RecipeDetail: RecipeFormated {
     }
 
     var formatedServings: String {
+        guard servings != 0 else {
+            return DefaultString.servings
+        }
       return " \(Int(servings)) 🍴"
     }
 
     var formatedIngredientLines: String {
+        guard !ingredientLines.isEmpty else {
+            return DefaultString.ingredientLines
+        }
         return "- " + ingredientLines.joined(separator: "\n- ")
     }
 
     var formatedTotalTime: String {
+        guard totalTime != 0 else {
+            return DefaultString.totalTime
+        }
         return " \(Int(totalTime))min ⏱"
     }
 
     var formatedIngredientsPreview: String {
+        guard !ingredientsPreview.isEmpty else {
+            return DefaultString.ingredientsPreview
+        }
         let ingredientsNames = ingredientsPreview.map(\.food)
         return ingredientsNames.joined(separator: ", ")
     }
 
     var id: String {
-        guard let substring = rawIdentifier.split(separator: "_").last else {
-            return ""
+        guard rawIdentifier.contains("_"), let substring = rawIdentifier.split(separator: "_").last else {
+            return DefaultString.id
         }
         let idFormated = String(substring)
         return idFormated

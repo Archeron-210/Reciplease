@@ -10,7 +10,7 @@ extension FavoriteRecipe: RecipeFormated {
 
     var id: String {
         guard let substring = rawIdentifer?.split(separator: "_").last else {
-            return ""
+            return "No ID available"
         }
         let idFormated = String(substring)
         return idFormated

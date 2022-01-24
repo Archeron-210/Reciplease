@@ -48,7 +48,7 @@ class RecipeService {
         networkService.request(baseURL: apiConfiguration.baseURL, parameters: parameters) { (result: Result<RecipeHit, Error>) in
             switch result {
             case .success(let recipeHit):
-                // create a copy in which we can access directly the recipe details :
+                // creating a copy in which we can access directly the recipe details :
                 let recipeDetails = recipeHit.hits.map(\.recipe)
                 completion(.success(recipeDetails))
             case .failure(let error):
