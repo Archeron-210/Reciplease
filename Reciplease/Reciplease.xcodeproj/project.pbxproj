@@ -12,7 +12,7 @@
 		2058A8FB2799CA4500A33496 /* FavoriteRecipeFormatedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058A8FA2799CA4500A33496 /* FavoriteRecipeFormatedTests.swift */; };
 		2088ED522791D75C008D7C1F /* TableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088ED512791D75C008D7C1F /* TableView+Extension.swift */; };
 		2088ED672795E310008D7C1F /* FakeRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088ED662795E310008D7C1F /* FakeRecipes.swift */; };
-		2088ED6C2795E5D3008D7C1F /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088ED6B2795E5D3008D7C1F /* NetworkProtocol.swift */; };
+		2088ED6C2795E5D3008D7C1F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088ED6B2795E5D3008D7C1F /* NetworkService.swift */; };
 		2088ED80279706EE008D7C1F /* Reciplease.json in Resources */ = {isa = PBXBuildFile; fileRef = 2088ED7F279706EE008D7C1F /* Reciplease.json */; };
 		2088ED842797107E008D7C1F /* FakeNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088ED832797107E008D7C1F /* FakeNetworkService.swift */; };
 		2088ED8C279713C2008D7C1F /* RecipeServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088ED8B279713C2008D7C1F /* RecipeServiceTest.swift */; };
@@ -55,7 +55,7 @@
 		2058A8FA2799CA4500A33496 /* FavoriteRecipeFormatedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeFormatedTests.swift; sourceTree = "<group>"; };
 		2088ED512791D75C008D7C1F /* TableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extension.swift"; sourceTree = "<group>"; };
 		2088ED662795E310008D7C1F /* FakeRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeRecipes.swift; sourceTree = "<group>"; };
-		2088ED6B2795E5D3008D7C1F /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		2088ED6B2795E5D3008D7C1F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		2088ED7F279706EE008D7C1F /* Reciplease.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Reciplease.json; sourceTree = "<group>"; };
 		2088ED832797107E008D7C1F /* FakeNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNetworkService.swift; sourceTree = "<group>"; };
 		2088ED8B279713C2008D7C1F /* RecipeServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeServiceTest.swift; sourceTree = "<group>"; };
@@ -204,7 +204,7 @@
 				20BF3E56278F6EB000064DC1 /* RecipeFormated.swift */,
 				20BF3DEE2784A0C500064DC1 /* RecipeData.swift */,
 				20152D3B279EBF260066C35E /* DefaultString.swift */,
-				2088ED6B2795E5D3008D7C1F /* NetworkProtocol.swift */,
+				2088ED6B2795E5D3008D7C1F /* NetworkService.swift */,
 				20E87A56278491C1005B3DB2 /* RecipeService.swift */,
 				20E87A2A277C7C39005B3DB2 /* CoreData */,
 				20BF3E38278DCC1100064DC1 /* FavoriteRecipe.swift */,
@@ -449,7 +449,7 @@
 				20BF3E39278DCC1100064DC1 /* FavoriteRecipe.swift in Sources */,
 				20E87A37277CB7A9005B3DB2 /* RecipesViewController.swift in Sources */,
 				20E87A3C277CC33E005B3DB2 /* RecipeDetailViewController.swift in Sources */,
-				2088ED6C2795E5D3008D7C1F /* NetworkProtocol.swift in Sources */,
+				2088ED6C2795E5D3008D7C1F /* NetworkService.swift in Sources */,
 				20E879F0277C7956005B3DB2 /* SceneDelegate.swift in Sources */,
 				20BF3E3E278F241900064DC1 /* FavoriteRecipeRepository.swift in Sources */,
 				20BF3DEF2784A0C500064DC1 /* RecipeData.swift in Sources */,

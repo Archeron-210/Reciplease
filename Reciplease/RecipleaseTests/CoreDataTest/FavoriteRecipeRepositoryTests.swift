@@ -5,7 +5,7 @@ import CoreData
 
 class FavoriteRecipeRepositoryTests: XCTestCase {
 
-    var coreDataStack: CoreDataStack!
+    var coreDataStack: CoreDataStackProtocol!
     var repository: FavoriteRecipeRepository!
 
     override func setUp() {

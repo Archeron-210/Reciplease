@@ -41,7 +41,7 @@ class FakeRecipes {
 
 class FakeFavoriteRecipe {
 
-    static func correctFavoriteRecipe(coreDataStack: CoreDataStack, repository: FavoriteRecipeRepository) -> FavoriteRecipe {
+    static func correctFavoriteRecipe(coreDataStack: CoreDataStackProtocol, repository: FavoriteRecipeRepository) -> FavoriteRecipe {
 
         let recipe = FakeRecipes.correctRecipeDetail()
         let favoriteRecipe = FavoriteRecipe(context: coreDataStack.viewContext)
@@ -59,7 +59,7 @@ class FakeFavoriteRecipe {
         return favoriteRecipe
     }
 
-    static func incorrectFavoriteRecipe(coreDataStack: CoreDataStack, repository: FavoriteRecipeRepository) -> FavoriteRecipe {
+    static func incorrectFavoriteRecipe(coreDataStack: CoreDataStackProtocol, repository: FavoriteRecipeRepository) -> FavoriteRecipe {
 
         let recipe = FakeRecipes.incorrectRecipeDetail()
         let wrongFavoriteRecipe = FavoriteRecipe(context: coreDataStack.viewContext)

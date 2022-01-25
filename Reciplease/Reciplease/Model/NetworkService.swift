@@ -1,9 +1,3 @@
-//
-//  NetworkProtocol.swift
-//  Reciplease
-//
-//  Created by Archeron on 17/01/2022.
-//
 
 import Foundation
 import Alamofire

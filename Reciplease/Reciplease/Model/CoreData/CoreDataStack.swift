@@ -2,15 +2,11 @@
 import Foundation
 import CoreData
 
-class CoreDataStack {
+protocol CoreDataStackProtocol {
+    var viewContext: NSManagedObjectContext { get }
+}
 
-    // MARK: - Properties
-
-    static let modelName = "Reciplease"
-
-    // MARK: - Singleton
-
-    static var shared = CoreDataStack()
+class CoreDataStack: CoreDataStackProtocol {
 
     // MARK: - Public
 
@@ -20,9 +16,9 @@ class CoreDataStack {
 
     // MARK: - Private
 
-    init() {}
+    private static let modelName = "Reciplease"
 
-    lazy var persistentContainer: NSPersistentContainer = {
+    private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: CoreDataStack.modelName)
         container.loadPersistentStores { storeDescription, error in
             if let error = error as NSError? {

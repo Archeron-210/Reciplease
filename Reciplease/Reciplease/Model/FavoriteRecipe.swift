@@ -31,7 +31,7 @@ extension FavoriteRecipe: RecipeFormated {
 
 
     var recipeName: String {
-        guard let recipeName = recipeTitle, !recipeName.isEmpty else {
+        guard let recipeName = recipeTitle else {
             return DefaultString.recipeTitle
         }
         return recipeName

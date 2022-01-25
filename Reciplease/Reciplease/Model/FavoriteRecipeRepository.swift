@@ -10,11 +10,11 @@ final class FavoriteRecipeRepository {
 
     // MARK: - Properties
 
-    private let coreDataStack: CoreDataStack
+    private let coreDataStack: CoreDataStackProtocol
 
     // MARK: - Init
 
-    init(coreDataStack: CoreDataStack = CoreDataStack.shared) {
+    init(coreDataStack: CoreDataStackProtocol = CoreDataStack()) {
         self.coreDataStack = coreDataStack
     }
 
