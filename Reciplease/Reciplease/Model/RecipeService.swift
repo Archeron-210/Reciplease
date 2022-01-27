@@ -24,10 +24,6 @@ struct APIConfiguration {
 
 class RecipeService {
 
-    // MARK: - Singleton
-
-    static let shared = RecipeService()
-
     // MARK: - Properties
 
     private let networkService: NetworkProtocol

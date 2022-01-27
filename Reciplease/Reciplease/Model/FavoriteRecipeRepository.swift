@@ -4,10 +4,6 @@ import CoreData
 
 final class FavoriteRecipeRepository {
 
-    // MARK: - Singleton
-
-    static let shared = FavoriteRecipeRepository()
-
     // MARK: - Properties
 
     private let coreDataStack: CoreDataStackProtocol

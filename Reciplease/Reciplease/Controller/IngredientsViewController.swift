@@ -14,6 +14,8 @@ class IngredientsViewController: UIViewController {
     
     // MARK: - Properties
 
+    private let recipeService = RecipeService()
+
     private var ingredientList: [String] = []
 
     private var ingredientListFormated: String {
@@ -67,7 +69,7 @@ class IngredientsViewController: UIViewController {
 
     private func getRecipes() {
         toggleActivityIndicator(shown: true)
-        RecipeService.shared.getRecipes(ingredientList: ingredientList) { result in
+        recipeService.getRecipes(ingredientList: ingredientList) { result in
             self.toggleActivityIndicator(shown: false)
             switch result {
             case .success(let recipeDetails):
