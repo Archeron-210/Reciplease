@@ -38,15 +38,15 @@ class RecipeService {
 
     // MARK: - Functions
 
-    func getRecipes(ingredientList: [String], completion: @escaping (Result<[RecipeDetail], Error>) -> Void) {
+    func getRecipes(ingredientList: [String], completion: @escaping (Result<[Recipe], Error>) -> Void) {
         let parameters = computeParameters(for: ingredientList)
 
         networkService.request(baseURL: apiConfiguration.baseURL, parameters: parameters) { (result: Result<RecipeHit, Error>) in
             switch result {
             case .success(let recipeHit):
                 // creating a copy in which we can access directly the recipe details :
-                let recipeDetails = recipeHit.hits.map(\.recipe)
-                completion(.success(recipeDetails))
+                let recipes = recipeHit.hits.map { Recipe(recipeFormated: $0.recipe)}
+                completion(.success(recipes))
             case .failure(let error):
                 completion(.failure(error))
             }

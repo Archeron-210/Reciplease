@@ -9,7 +9,7 @@ class RecipesViewController: UIViewController {
     
     // MARK: - Property
 
-    var recipes: [RecipeDetail] = []
+    var recipes: [Recipe] = []
 
     // MARK: - Life Cycle
     override func viewDidLoad() {

@@ -17,7 +17,7 @@ final class FavoriteRecipeRepository {
     // MARK: - Functions
 
     func getRecipes() -> [RecipeFormated] {
-        return getFavoriteRecipes()
+        return getFavoriteRecipes().map { Recipe(recipeFormated: $0) }
     }
 
     func saveRecipe(recipe: RecipeFormated) {

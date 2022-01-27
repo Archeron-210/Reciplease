@@ -5,14 +5,14 @@ import XCTest
 
 class RecipeServiceTest: XCTestCase {
 
-    // The only test here is to check if we correctly obtain a [RecipeDetail] when network call is successful 
+    // The only test here is to check if we correctly obtain a [Recipe] when network call is successful
 
     let testIngredientsList = ["chicken"]
 
     func testGetRecipesShouldCompleteSuccessfullyWithRecipesIfNoError() {
         let recipeService = RecipeService(networkService: FakeNetworkService(), configuration: FakeConfiguration.recipesCorrect)
 
-        recipeService.getRecipes(ingredientList: testIngredientsList) { (result: Result<[RecipeDetail], Error>) in
+        recipeService.getRecipes(ingredientList: testIngredientsList) { (result: Result<[Recipe], Error>) in
             // Then
             switch result {
             case .failure:
@@ -27,7 +27,7 @@ class RecipeServiceTest: XCTestCase {
     func testGetRecipesShouldFailWithErrorIfIncorrectData() {
         let recipeService = RecipeService(networkService: FakeNetworkService(), configuration: FakeConfiguration.recipesIncorrect)
 
-        recipeService.getRecipes(ingredientList: testIngredientsList) { (result: Result<[RecipeDetail], Error>) in
+        recipeService.getRecipes(ingredientList: testIngredientsList) { (result: Result<[Recipe], Error>) in
             // Then
             switch result {
             case .failure(let error):

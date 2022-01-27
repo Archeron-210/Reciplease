@@ -72,11 +72,11 @@ class IngredientsViewController: UIViewController {
         recipeService.getRecipes(ingredientList: ingredientList) { result in
             self.toggleActivityIndicator(shown: false)
             switch result {
-            case .success(let recipeDetails):
+            case .success(let recipes):
                 guard let recipesViewController = self.storyboard?.instantiateViewController(identifier: "RecipesViewController") as? RecipesViewController else {
                     return
                 }
-                recipesViewController.recipes = recipeDetails
+                recipesViewController.recipes = recipes
                 self.navigationController?.pushViewController(recipesViewController, animated: true)
             case .failure:
                 self.errorAlert()

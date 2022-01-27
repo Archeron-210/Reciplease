@@ -4,10 +4,10 @@ import Foundation
 // MARK: -  Data mapping from JSON response
 
 struct RecipeHit: Decodable {
-    var hits: [Recipe]
+    var hits: [Hit]
 }
 
-struct Recipe: Decodable {
+struct Hit: Decodable {
     var recipe: RecipeDetail
 }
 
