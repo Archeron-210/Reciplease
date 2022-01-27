@@ -8,8 +8,14 @@ protocol CoreDataStackProtocol {
 
 class CoreDataStack: CoreDataStackProtocol {
 
-    // MARK: - Public
+    // MARK: - Singleton
 
+    static let shared = CoreDataStack()
+
+    private init() {}
+
+    // MARK: - Public
+    
     var viewContext: NSManagedObjectContext {
         return persistentContainer.viewContext
     }

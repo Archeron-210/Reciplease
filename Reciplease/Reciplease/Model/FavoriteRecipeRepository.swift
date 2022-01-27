@@ -10,7 +10,7 @@ final class FavoriteRecipeRepository {
 
     // MARK: - Init
 
-    init(coreDataStack: CoreDataStackProtocol = CoreDataStack()) {
+    init(coreDataStack: CoreDataStackProtocol = CoreDataStack.shared) {
         self.coreDataStack = coreDataStack
     }
 
