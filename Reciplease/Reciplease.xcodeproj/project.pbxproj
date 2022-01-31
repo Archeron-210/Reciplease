@@ -24,6 +24,7 @@
 		20BF3E39278DCC1100064DC1 /* FavoriteRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BF3E38278DCC1100064DC1 /* FavoriteRecipe.swift */; };
 		20BF3E3E278F241900064DC1 /* FavoriteRecipeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BF3E3D278F241900064DC1 /* FavoriteRecipeRepository.swift */; };
 		20BF3E57278F6EB000064DC1 /* RecipeFormated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BF3E56278F6EB000064DC1 /* RecipeFormated.swift */; };
+		20DB580127A312430007B649 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB580027A312430007B649 /* Recipe.swift */; };
 		20E879EE277C7956005B3DB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E879ED277C7956005B3DB2 /* AppDelegate.swift */; };
 		20E879F0277C7956005B3DB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E879EF277C7956005B3DB2 /* SceneDelegate.swift */; };
 		20E879F5277C7956005B3DB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E879F3277C7956005B3DB2 /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		20BF3E38278DCC1100064DC1 /* FavoriteRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipe.swift; sourceTree = "<group>"; };
 		20BF3E3D278F241900064DC1 /* FavoriteRecipeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeRepository.swift; sourceTree = "<group>"; };
 		20BF3E56278F6EB000064DC1 /* RecipeFormated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFormated.swift; sourceTree = "<group>"; };
+		20DB580027A312430007B649 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		20E879EA277C7956005B3DB2 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E879ED277C7956005B3DB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20E879EF277C7956005B3DB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				20BF3E56278F6EB000064DC1 /* RecipeFormated.swift */,
+				20DB580027A312430007B649 /* Recipe.swift */,
 				20BF3DEE2784A0C500064DC1 /* RecipeData.swift */,
 				20152D3B279EBF260066C35E /* DefaultString.swift */,
 				2088ED6B2795E5D3008D7C1F /* NetworkService.swift */,
@@ -451,6 +454,7 @@
 				20E87A3C277CC33E005B3DB2 /* RecipeDetailViewController.swift in Sources */,
 				2088ED6C2795E5D3008D7C1F /* NetworkService.swift in Sources */,
 				20E879F0277C7956005B3DB2 /* SceneDelegate.swift in Sources */,
+				20DB580127A312430007B649 /* Recipe.swift in Sources */,
 				20BF3E3E278F241900064DC1 /* FavoriteRecipeRepository.swift in Sources */,
 				20BF3DEF2784A0C500064DC1 /* RecipeData.swift in Sources */,
 			);
