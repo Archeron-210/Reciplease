@@ -25,6 +25,8 @@ class FavoritesViewController: UIViewController {
     }
 }
 
+    // MARK: - TableView Management
+
 extension FavoritesViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -56,6 +58,8 @@ extension FavoritesViewController: UITableViewDataSource {
         160.0
     }
 }
+
+    // MARK: - Navigation
 
 extension FavoritesViewController: UITableViewDelegate {
     // segue to next controller to display recipe details when a cell is clicked :

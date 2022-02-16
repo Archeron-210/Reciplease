@@ -15,10 +15,11 @@ class RecipesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
-        // Do any additional setup after loading the view.
     }
 
 }
+
+    // MARK: - TableView Management
 
 extension RecipesViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,6 +51,9 @@ extension RecipesViewController: UITableViewDataSource {
         160.0
     }
 }
+
+
+    // MARK: - Navigation
 
 extension RecipesViewController: UITableViewDelegate {
     // segue to next controller to display recipe details when a cell is clicked :

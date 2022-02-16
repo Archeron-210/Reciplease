@@ -53,10 +53,8 @@ class FavoriteRecipeRepositoryTests: XCTestCase {
         repository.saveRecipe(recipe: secondRecipe)
 
         let favoriteRecipes = repository.getRecipes()
-        XCTAssertNotEqual(favoriteRecipes.count, 2)
         XCTAssertEqual(favoriteRecipes.count, 1)
         XCTAssertEqual(favoriteRecipes.first?.id, firstRecipe.id)
-
     }
 
 }

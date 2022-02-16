@@ -40,24 +40,13 @@ class RecipeDetailViewController: UIViewController {
     }
     
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
-        guard let recipe = recipeFormated else {
-            return
-        }
-
-        let isAFavorite = repository.isFavorite(recipe: recipe)
-        if isAFavorite {
-          repository.deleteRecipe(recipe: recipe)
-        } else {
-            repository.saveRecipe(recipe: recipe)
-        }
-        setFavoriteIcon() 
+        manageFavorite()
     }
 
     // MARK: - Private
 
     private func displayRecipeInfo() {
         guard let recipe = recipeFormated  else {
-            // display favorite recipe info ?
             return
         }
         if let imageUrl = recipe.imageUrl {
@@ -69,6 +58,20 @@ class RecipeDetailViewController: UIViewController {
         timeLabel.text = recipe.formatedTotalTime
         recipeTitleLabel.text = recipe.recipeName
         ingredientListTextView.text = recipe.formatedIngredientLines
+    }
+
+    private func manageFavorite() {
+        guard let recipe = recipeFormated else {
+            return
+        }
+
+        let isAFavorite = repository.isFavorite(recipe: recipe)
+        if isAFavorite {
+          repository.deleteRecipe(recipe: recipe)
+        } else {
+            repository.saveRecipe(recipe: recipe)
+        }
+        setFavoriteIcon()
     }
 
     private func goToWebsite() {

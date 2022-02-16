@@ -5,6 +5,7 @@ import CoreData
 
 class FavoriteRecipe: NSManagedObject {}
 
+// MARK: - RecipeFormated Protocol Implementation
 
 extension FavoriteRecipe: RecipeFormated {
 

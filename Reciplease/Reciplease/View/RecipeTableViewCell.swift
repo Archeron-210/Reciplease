@@ -23,12 +23,7 @@ class RecipeTableViewCell: UITableViewCell {
     // MARK: - Configure
 
     func configure(with recipe: RecipeFormated) {
-        if let imageUrl = recipe.imageUrl {
-            recipeImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "default pic"))
-        } else {
-            recipeImageView.image = UIImage(named: "default pic")
-        }
-
+        setImage(for: recipe)
         servingsLabel.text = recipe.formatedServings
         timeLabel.text = recipe.formatedTotalTime
         recipeTitleLabel.text = recipe.recipeName
@@ -36,6 +31,15 @@ class RecipeTableViewCell: UITableViewCell {
     }
 
     // MARK: - Private
+
+    private func setImage(for recipe: RecipeFormated) {
+        // image setting using AlamofireImage, with a placeholderImage :
+        if let imageUrl = recipe.imageUrl {
+            recipeImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "default pic"))
+        } else {
+            recipeImageView.image = UIImage(named: "default pic")
+        }
+    }
 
     private func setAspect() {
         servsAndTimeStackView.layer.cornerRadius = 5.0

@@ -12,8 +12,6 @@ class CoreDataStack: CoreDataStackProtocol {
 
     static let shared = CoreDataStack()
 
-    private init() {}
-
     // MARK: - Public
     
     var viewContext: NSManagedObjectContext {
@@ -21,6 +19,8 @@ class CoreDataStack: CoreDataStackProtocol {
     }
 
     // MARK: - Private
+
+    private init() {}
 
     private static let modelName = "Reciplease"
 

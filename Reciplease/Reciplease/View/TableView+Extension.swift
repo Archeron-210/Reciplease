@@ -10,7 +10,7 @@ extension UITableView {
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
-        messageLabel.font = UIFont(name: "KohinoorBangla", size: 25)
+        messageLabel.font = UIFont(name: "Kohinoor Bangla", size: 20)
         messageLabel.sizeToFit()
 
         self.backgroundView = messageLabel
