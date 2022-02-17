@@ -70,7 +70,7 @@ final class FavoriteRecipeRepository {
     // MARK: - Private
 
     private func getFavoriteRecipes() -> [FavoriteRecipe] {
-        let request : NSFetchRequest<FavoriteRecipe> = FavoriteRecipe.fetchRequest()
+        let request: NSFetchRequest<FavoriteRecipe> = FavoriteRecipe.fetchRequest()
         do {
             let favorites = try coreDataStack.viewContext.fetch(request)
             return favorites

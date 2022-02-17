@@ -86,6 +86,7 @@ class IngredientsViewController: UIViewController {
     }
 
     // MARK: - Alerts
+
     private func errorAlert() {
         let alert = UIAlertController(title: "⚠️", message: "It seems like something went wrong with servers 🔌", preferredStyle: .alert)
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
