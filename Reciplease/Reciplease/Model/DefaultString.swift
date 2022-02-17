@@ -1,6 +1,7 @@
 
 import Foundation
 
+// This structures simply stores the defaults String properties
 struct DefaultString {
     static let servings = " N/A 🍴"
     static let totalTime = " N/A ⏱"

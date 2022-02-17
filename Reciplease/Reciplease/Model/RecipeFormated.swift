@@ -1,6 +1,7 @@
 
 import Foundation
 
+// This protocol allows to uniformize the use of objects throughout the app
 protocol RecipeFormated {
 
     var id: String { get }

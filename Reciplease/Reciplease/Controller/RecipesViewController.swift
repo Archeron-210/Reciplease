@@ -1,22 +1,36 @@
 
 import UIKit
+import CoreData
 
 class RecipesViewController: UIViewController {
 
-    // MARK: - Outlet
+// MARK: - Outlet
 
     @IBOutlet weak var tableView: UITableView!
-    
-    // MARK: - Property
 
-    var recipes: [Recipe] = []
+    // MARK: - Properties
+
+    var recipes: [RecipeFormated] = []
+    // property that determines if we should display favorites or search results by stating if we use the repository or not :
+    var useRepository: Bool = true
+    private let repository = FavoriteRecipeRepository()
 
     // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
+        if useRepository {
+            // pass correct data to recipes in case we display favorites :
+            recipes = repository.getRecipes()
+            tableView.reloadData()
+        }
+    }
 }
 
     // MARK: - TableView Management
@@ -28,10 +42,14 @@ extension RecipesViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if recipes.count == 0 {
-                self.tableView.setEmptyMessage("Sorry, we were unable to find matching results \nfor your search, please try again after checking your spelling !\n🥘")
+            if useRepository {
+                self.tableView.setEmptyMessage("You do not have any favorite yet!\n🥘")
             } else {
-                self.tableView.restore()
+                self.tableView.setEmptyMessage("Sorry, we were unable to find matching results \nfor your search, please try again after checking your spelling !\n🥘")
             }
+        } else {
+            self.tableView.restore()
+        }
         return recipes.count
     }
 
@@ -40,18 +58,17 @@ extension RecipesViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let recipe = recipes[indexPath.row]
+        let favorite = recipes[indexPath.row]
 
-        cell.configure(with: recipe)
+        cell.configure(with: favorite)
 
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         160.0
     }
 }
-
 
     // MARK: - Navigation
 
@@ -67,3 +84,5 @@ extension RecipesViewController: UITableViewDelegate {
         self.navigationController?.pushViewController(recipeDetailViewController, animated: true)
     }
 }
+
+

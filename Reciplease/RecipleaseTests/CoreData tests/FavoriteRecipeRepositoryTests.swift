@@ -30,7 +30,13 @@ class FavoriteRecipeRepositoryTests: XCTestCase {
         XCTAssertTrue(!favoriteRecipes.isEmpty)
         XCTAssertEqual(favoriteRecipes.count, 1)
         XCTAssertEqual(favoriteRecipes.first?.id, validRecipe.id)
-
+        XCTAssertEqual(validRecipe.recipeName, favoriteRecipes.first?.recipeName)
+        XCTAssertEqual(validRecipe.imageUrl, favoriteRecipes.first?.imageUrl)
+        XCTAssertEqual(validRecipe.formatedTotalTime, favoriteRecipes.first?.formatedTotalTime)
+        XCTAssertEqual(validRecipe.formatedServings, favoriteRecipes.first?.formatedServings)
+        XCTAssertEqual(validRecipe.formatedIngredientsPreview, favoriteRecipes.first?.formatedIngredientsPreview)
+        XCTAssertEqual(validRecipe.formatedIngredientLines, favoriteRecipes.first?.formatedIngredientLines)
+        XCTAssertEqual(validRecipe.imageUrl, favoriteRecipes.first?.imageUrl)
     }
 
     func testGivenARecipeIsSaved_WhenDeleting_ThenTheRecipeIsCorrectlyDeleted() {

@@ -17,7 +17,7 @@ final class FavoriteRecipeRepository {
     // MARK: - Functions
 
     func getRecipes() -> [RecipeFormated] {
-        // create a copy to use elsewhere in the app, without using specifically a FavoriteRecipe :
+        // creates a copy to use elsewhere in the app, without using specifically an object that has a CoreData reference :
         return getFavoriteRecipes().map { Recipe(recipeFormated: $0) }
     }
 

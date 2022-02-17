@@ -15,6 +15,7 @@ struct Recipe: RecipeFormated {
     var formatedIngredientsPreview: String
 
     // MARK: - Init
+    // allows to create a recipe with any object that conforms to RecipeFormated:
 
     init(recipeFormated: RecipeFormated) {
         self.id = recipeFormated.id

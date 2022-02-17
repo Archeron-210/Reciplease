@@ -76,6 +76,7 @@ class IngredientsViewController: UIViewController {
                 guard let recipesViewController = self.storyboard?.instantiateViewController(identifier: "RecipesViewController") as? RecipesViewController else {
                     return
                 }
+                recipesViewController.useRepository = false
                 recipesViewController.recipes = recipes
                 self.navigationController?.pushViewController(recipesViewController, animated: true)
             case .failure:
