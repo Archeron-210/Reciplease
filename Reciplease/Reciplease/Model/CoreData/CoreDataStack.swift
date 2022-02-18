@@ -18,7 +18,7 @@ class CoreDataStack: CoreDataStackProtocol {
         return persistentContainer.viewContext
     }
 
-    func saveContext () {
+    func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
