@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0EBF1DE6B3CC90BD12A90824 /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5993D39590D4F8A31FD10157 /* Pods_Reciplease.framework */; };
 		20152D3C279EBF260066C35E /* DefaultString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20152D3B279EBF260066C35E /* DefaultString.swift */; };
+		202CBD8E27FDF3BF0004ED95 /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202CBD8D27FDF3BF0004ED95 /* TextField+Extension.swift */; };
 		2058A8FB2799CA4500A33496 /* FavoriteRecipeFormatedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058A8FA2799CA4500A33496 /* FavoriteRecipeFormatedTests.swift */; };
 		2088ED522791D75C008D7C1F /* TableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088ED512791D75C008D7C1F /* TableView+Extension.swift */; };
 		2088ED672795E310008D7C1F /* FakeRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2088ED662795E310008D7C1F /* FakeRecipes.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		20152D3B279EBF260066C35E /* DefaultString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultString.swift; sourceTree = "<group>"; };
+		202CBD8D27FDF3BF0004ED95 /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 		2058A8FA2799CA4500A33496 /* FavoriteRecipeFormatedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeFormatedTests.swift; sourceTree = "<group>"; };
 		2088ED512791D75C008D7C1F /* TableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extension.swift"; sourceTree = "<group>"; };
 		2088ED662795E310008D7C1F /* FakeRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeRecipes.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				20E879F3277C7956005B3DB2 /* Main.storyboard */,
 				20BF3E08278600D600064DC1 /* RecipeTableViewCell.swift */,
 				2088ED512791D75C008D7C1F /* TableView+Extension.swift */,
+				202CBD8D27FDF3BF0004ED95 /* TextField+Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				20BF3E09278600D600064DC1 /* RecipeTableViewCell.swift in Sources */,
 				20BF3E34278D93FD00064DC1 /* CoreDataStack.swift in Sources */,
 				20E879EE277C7956005B3DB2 /* AppDelegate.swift in Sources */,
+				202CBD8E27FDF3BF0004ED95 /* TextField+Extension.swift in Sources */,
 				20E87A57278491C1005B3DB2 /* RecipeService.swift in Sources */,
 				20BF3E39278DCC1100064DC1 /* FavoriteRecipe.swift in Sources */,
 				20E87A3C277CC33E005B3DB2 /* RecipeDetailViewController.swift in Sources */,
@@ -628,11 +632,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 894B201CC631986EB7082CA9 /* Pods-Reciplease.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3UQTFY6Z46;
 				INFOPLIST_FILE = "Reciplease/Supporting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -648,11 +653,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 68BF2485449A524CA741FE6A /* Pods-Reciplease.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3UQTFY6Z46;
 				INFOPLIST_FILE = "Reciplease/Supporting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

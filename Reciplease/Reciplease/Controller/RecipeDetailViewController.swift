@@ -25,6 +25,7 @@ class RecipeDetailViewController: UIViewController {
         super.viewDidLoad()
 
         setInterfaceAspect()
+        setTextViewAspect()
         displayRecipeInfo()
         setFavoriteIcon()
     }
@@ -105,9 +106,18 @@ class RecipeDetailViewController: UIViewController {
     }
 
     private func setInterfaceAspect() {
-        getDirectionsButton.layer.cornerRadius = 10.0
+        getDirectionsButton.layer.cornerRadius = 10
+        getDirectionsButton.layer.borderWidth = 0.5
+        getDirectionsButton.layer.borderColor = UIColor.white.cgColor
         servsAndTimeStackView.layer.cornerRadius = 5.0
-        servsAndTimeStackView.layer.borderWidth = 1
+        servsAndTimeStackView.layer.borderWidth = 0.5
         servsAndTimeStackView.layer.borderColor = UIColor.white.cgColor
+    }
+
+    private func setTextViewAspect() {
+        ingredientListTextView.backgroundColor = UIColor.clear
+        ingredientListTextView.layer.cornerRadius = 10
+        ingredientListTextView.layer.borderWidth = 0.5
+        ingredientListTextView.layer.borderColor = UIColor.white.cgColor
     }
 }

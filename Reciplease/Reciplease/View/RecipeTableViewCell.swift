@@ -43,7 +43,7 @@ class RecipeTableViewCell: UITableViewCell {
 
     private func setAspect() {
         servsAndTimeStackView.layer.cornerRadius = 5.0
-        servsAndTimeStackView.layer.borderWidth = 1
+        servsAndTimeStackView.layer.borderWidth = 0.5
         servsAndTimeStackView.layer.borderColor = UIColor.white.cgColor
     }
 }

@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.070131035751262671" green="0.066693239881102734" blue="0.068805759578771108" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
@@ -36,7 +36,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oWh-Z2-eYY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.070131035751262671" green="0.066693239881102734" blue="0.068805759578771108" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -57,6 +57,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="kkW-k1-rxt">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fmg-AX-clm" userLabel="Fridge Stack View">
                                 <rect key="frame" x="20" y="108" width="374" height="76"/>
                                 <subviews>
@@ -69,9 +72,10 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="L18-6J-26U" userLabel="Add Stack View">
                                         <rect key="frame" x="0.0" y="36" width="374" height="40"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lemon, Cheese, Cream..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Isv-SV-3xG">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Lemon, Cheese, Cream..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Isv-SV-3xG">
                                                 <rect key="frame" x="0.0" y="0.0" width="309" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="namePhonePad" keyboardAppearance="alert" returnKeyType="done"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="Iza-CC-J01" id="Afx-LG-l1z"/>
@@ -79,7 +83,7 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptr-Ii-GW6">
                                                 <rect key="frame" x="314" y="0.0" width="60" height="40"/>
-                                                <color key="backgroundColor" red="0.34162098169999999" green="0.57520991560000001" blue="0.38036242129999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.083602227269999996" green="0.38293802739999999" blue="0.1646612287" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="3vP-RU-DZS"/>
                                                 </constraints>
@@ -109,7 +113,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gm4-EW-kD8">
                                         <rect key="frame" x="290" y="0.0" width="84" height="40"/>
-                                        <color key="backgroundColor" red="0.54898315669999997" green="0.54509329799999995" blue="0.54509836440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="20"/>
                                         <state key="normal" title="Clear">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -122,14 +126,14 @@
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdu-qb-qci" userLabel="Ingredients Text View">
                                 <rect key="frame" x="20" y="274" width="374" height="442"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K34-2T-Dja">
                                 <rect key="frame" x="20" y="736" width="374" height="47"/>
-                                <color key="backgroundColor" red="0.34162098169999999" green="0.57520991560000001" blue="0.38036242129999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.083602227269999996" green="0.38293802739999999" blue="0.1646612287" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="25"/>
                                 <state key="normal" title="Search for recipes">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -152,11 +156,15 @@
                             <constraint firstItem="Vp5-CT-0ed" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="K34-2T-Dja" secondAttribute="trailing" constant="20" id="8aJ-rb-mhx"/>
                             <constraint firstItem="Vp5-CT-0ed" firstAttribute="bottom" secondItem="K34-2T-Dja" secondAttribute="bottom" constant="30" id="BxI-wT-4LY"/>
                             <constraint firstItem="Fmg-AX-clm" firstAttribute="top" secondItem="Vp5-CT-0ed" secondAttribute="top" constant="20" id="Ezu-Zt-cCZ"/>
+                            <constraint firstItem="kkW-k1-rxt" firstAttribute="top" secondItem="ed5-d6-xjC" secondAttribute="top" id="F8Y-DH-JWh"/>
                             <constraint firstItem="Vp5-CT-0ed" firstAttribute="trailing" secondItem="jdu-qb-qci" secondAttribute="trailing" constant="20" id="Gyy-Xu-r2e"/>
                             <constraint firstItem="ELv-Ir-dWL" firstAttribute="leading" secondItem="Vp5-CT-0ed" secondAttribute="leading" constant="20" id="MqM-WC-NtA"/>
                             <constraint firstItem="XzU-pl-prh" firstAttribute="centerX" secondItem="K34-2T-Dja" secondAttribute="centerX" id="QRi-4e-CT8"/>
                             <constraint firstItem="Vp5-CT-0ed" firstAttribute="trailing" secondItem="ELv-Ir-dWL" secondAttribute="trailing" constant="20" id="UDe-4G-GeG"/>
+                            <constraint firstItem="kkW-k1-rxt" firstAttribute="leading" secondItem="ed5-d6-xjC" secondAttribute="leading" id="bAt-6U-kBm"/>
+                            <constraint firstAttribute="trailing" secondItem="kkW-k1-rxt" secondAttribute="trailing" id="e2S-rW-4yM"/>
                             <constraint firstItem="Vp5-CT-0ed" firstAttribute="trailing" secondItem="Fmg-AX-clm" secondAttribute="trailing" constant="20" id="maZ-xj-hMU"/>
+                            <constraint firstAttribute="bottom" secondItem="kkW-k1-rxt" secondAttribute="bottom" id="mk7-23-Ptl"/>
                             <constraint firstItem="jdu-qb-qci" firstAttribute="leading" secondItem="Vp5-CT-0ed" secondAttribute="leading" constant="20" id="oHu-Zt-ble"/>
                             <constraint firstItem="K34-2T-Dja" firstAttribute="top" secondItem="jdu-qb-qci" secondAttribute="bottom" constant="20" id="pRf-fq-M0x"/>
                             <constraint firstItem="XzU-pl-prh" firstAttribute="centerY" secondItem="K34-2T-Dja" secondAttribute="centerY" id="sFe-2D-dyZ"/>
@@ -196,7 +204,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bob-6B-clK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.070131035751262671" green="0.066693239881102734" blue="0.068805759578771108" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -219,7 +227,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HwM-Ta-z7b">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.21176470589999999" green="0.20000000000000001" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="160" id="J8i-hw-ct1" customClass="RecipeTableViewCell" customModule="Reciplease" customModuleProvider="target">
@@ -335,6 +343,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="gi4-Lm-seX">
+                                <rect key="frame" x="0.0" y="313" width="414" height="583"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default pic" translatesAutoresizingMaskIntoConstraints="NO" id="0pC-5D-W10" userLabel="Picture">
                                 <rect key="frame" x="0.0" y="44" width="414" height="269"/>
                             </imageView>
@@ -391,7 +402,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4B-0j-Ijl">
                                 <rect key="frame" x="20" y="797" width="374" height="45"/>
-                                <color key="backgroundColor" red="0.34162098169999999" green="0.57520991560000001" blue="0.38036242129999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.083602227269999996" green="0.38293802739999999" blue="0.1646612287" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="hpZ-6K-8Ke"/>
                                 </constraints>
@@ -408,6 +419,7 @@
                         <color key="backgroundColor" red="0.2116111815" green="0.2000738084" blue="0.19607773419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="0pC-5D-W10" firstAttribute="height" secondItem="t6S-g2-Fd2" secondAttribute="height" multiplier="0.3" id="3zC-SJ-6T3"/>
+                            <constraint firstItem="gi4-Lm-seX" firstAttribute="leading" secondItem="t6S-g2-Fd2" secondAttribute="leading" id="4Ou-is-Pjr"/>
                             <constraint firstItem="0pC-5D-W10" firstAttribute="leading" secondItem="lCK-jp-8cN" secondAttribute="leading" id="6Kj-ep-83l"/>
                             <constraint firstItem="lCK-jp-8cN" firstAttribute="trailing" secondItem="W0V-51-Toa" secondAttribute="trailing" constant="10" id="7jA-jx-W6u"/>
                             <constraint firstItem="67X-j8-5PI" firstAttribute="leading" secondItem="0pC-5D-W10" secondAttribute="leading" id="8BX-57-D11"/>
@@ -421,8 +433,11 @@
                             <constraint firstItem="8Ub-RM-ho2" firstAttribute="bottom" secondItem="0pC-5D-W10" secondAttribute="bottom" id="Rmm-Jp-Gga"/>
                             <constraint firstItem="a1u-Df-yDC" firstAttribute="top" secondItem="0pC-5D-W10" secondAttribute="bottom" constant="10" id="UCT-fc-jNK"/>
                             <constraint firstItem="L4B-0j-Ijl" firstAttribute="leading" secondItem="lCK-jp-8cN" secondAttribute="leading" constant="20" id="Xmy-yR-MOT"/>
+                            <constraint firstAttribute="trailing" secondItem="gi4-Lm-seX" secondAttribute="trailing" id="awl-d8-4NB"/>
                             <constraint firstItem="8Ub-RM-ho2" firstAttribute="trailing" secondItem="0pC-5D-W10" secondAttribute="trailing" id="cUM-6r-8Ho"/>
+                            <constraint firstItem="gi4-Lm-seX" firstAttribute="top" secondItem="0pC-5D-W10" secondAttribute="bottom" id="cZC-Aj-2Al"/>
                             <constraint firstItem="lCK-jp-8cN" firstAttribute="trailing" secondItem="a1u-Df-yDC" secondAttribute="trailing" constant="20" id="e5j-Sv-XJE"/>
+                            <constraint firstAttribute="bottom" secondItem="gi4-Lm-seX" secondAttribute="bottom" id="jzE-uw-38a"/>
                             <constraint firstItem="8Ub-RM-ho2" firstAttribute="top" secondItem="0pC-5D-W10" secondAttribute="top" id="qBc-wQ-LZj"/>
                             <constraint firstItem="0pC-5D-W10" firstAttribute="top" secondItem="lCK-jp-8cN" secondAttribute="top" id="sHY-u2-jRg"/>
                             <constraint firstItem="8Ub-RM-ho2" firstAttribute="leading" secondItem="0pC-5D-W10" secondAttribute="leading" id="zCj-fa-YfJ"/>
@@ -462,6 +477,7 @@
     <resources>
         <image name="default pic" width="308" height="308"/>
         <image name="gradient" width="66.5" height="66.5"/>
+        <image name="gradientBackground" width="66.5" height="200"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">

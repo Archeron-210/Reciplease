@@ -27,6 +27,8 @@ class IngredientsViewController: UIViewController {
         super.viewDidLoad()
         self.toggleActivityIndicator(shown: false)
         setButtonsAspect()
+        setTextViewAspect()
+        setTextFieldAspect()
     }
 
     // MARK: - Actions
@@ -112,8 +114,25 @@ class IngredientsViewController: UIViewController {
 
     private func setButtonsAspect() {
         addButton.layer.cornerRadius = 10.0
+        addButton.layer.borderWidth = 0.5
+        addButton.layer.borderColor = UIColor.white.cgColor
         clearButton.layer.cornerRadius = 10.0
+        clearButton.layer.borderWidth = 0.5
+        clearButton.layer.borderColor = UIColor.white.cgColor
         searchButton.layer.cornerRadius = 10.0
+        searchButton.layer.borderWidth = 0.5
+        searchButton.layer.borderColor = UIColor.white.cgColor
+    }
+
+    private func setTextViewAspect() {
+        ingredientListTextView.backgroundColor = UIColor.clear
+        ingredientListTextView.layer.cornerRadius = 10
+        ingredientListTextView.layer.borderWidth = 0.5
+        ingredientListTextView.layer.borderColor = UIColor.white.cgColor
+    }
+
+    private func setTextFieldAspect() {
+        ingredientTextField.setBottomBorderAndPlaceholderTextColor()
     }
 
     private func toggleActivityIndicator(shown: Bool) {
