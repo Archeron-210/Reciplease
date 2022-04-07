@@ -4,8 +4,8 @@ import XCTest
 
 class RecipeDetailFormatedTests: XCTestCase {
 
-    var correctTestRecipe: RecipeFormated!
-    var incorrectTestRecipe: RecipeFormated!
+    private var correctTestRecipe: RecipeFormated!
+    private var incorrectTestRecipe: RecipeFormated!
 
     override func setUp() {
         super.setUp()

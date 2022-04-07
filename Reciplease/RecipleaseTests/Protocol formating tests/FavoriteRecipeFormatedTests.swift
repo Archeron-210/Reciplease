@@ -5,22 +5,22 @@ import CoreData
 
 class FavoriteRecipeFormatedTests: XCTestCase {
 
-    var correctFavoriteRecipe: FavoriteRecipe!
-    var incorrectFavoriteRecipe: FavoriteRecipe!
+    private var correctFavoriteRecipe: FavoriteRecipe!
+    private var incorrectFavoriteRecipe: FavoriteRecipe!
 
-        override func setUp() {
-            super.setUp()
-            let coreDataStack = CoreDataTestStack()
-            let repository = FavoriteRecipeRepository(coreDataStack: coreDataStack)
-            correctFavoriteRecipe = FakeFavoriteRecipe.correctFavoriteRecipe(coreDataStack: coreDataStack, repository: repository)
-            incorrectFavoriteRecipe = FakeFavoriteRecipe.incorrectFavoriteRecipe(coreDataStack: coreDataStack, repository: repository)
-        }
+    override func setUp() {
+        super.setUp()
+        let coreDataStack = CoreDataTestStack()
+        let repository = FavoriteRecipeRepository(coreDataStack: coreDataStack)
+        correctFavoriteRecipe = FakeFavoriteRecipe.correctFavoriteRecipe(coreDataStack: coreDataStack, repository: repository)
+        incorrectFavoriteRecipe = FakeFavoriteRecipe.incorrectFavoriteRecipe(coreDataStack: coreDataStack, repository: repository)
+    }
 
-        override func tearDown() {
-            super.tearDown()
-            correctFavoriteRecipe = nil
-            incorrectFavoriteRecipe  = nil
-        }
+    override func tearDown() {
+        super.tearDown()
+        correctFavoriteRecipe = nil
+        incorrectFavoriteRecipe  = nil
+    }
 
     // MARK: - Correct Favorite Recipe
 

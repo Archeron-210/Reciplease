@@ -7,7 +7,7 @@ class RecipeServiceTest: XCTestCase {
 
     // The only test here is to check if we correctly obtain a [Recipe] when network call is successful
 
-    let testIngredientsList = ["chicken"]
+    private let testIngredientsList = ["chicken"]
 
     func testGetRecipesShouldCompleteSuccessfullyWithRecipesIfNoError() {
         let recipeService = RecipeService(networkService: FakeNetworkService(), configuration: FakeConfiguration.recipesCorrect)
