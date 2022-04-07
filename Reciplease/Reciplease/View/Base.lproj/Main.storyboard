@@ -225,7 +225,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HwM-Ta-z7b">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="pfK-Lm-fAa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HwM-Ta-z7b">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.21176470589999999" green="0.20000000000000001" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -318,8 +321,12 @@
                         <viewLayoutGuide key="safeArea" id="1dZ-pt-0ut"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="pfK-Lm-fAa" firstAttribute="leading" secondItem="9e3-Pv-mDg" secondAttribute="leading" id="43O-XY-s94"/>
                             <constraint firstItem="HwM-Ta-z7b" firstAttribute="trailing" secondItem="1dZ-pt-0ut" secondAttribute="trailing" id="CPg-ZX-zc8"/>
                             <constraint firstItem="HwM-Ta-z7b" firstAttribute="bottom" secondItem="1dZ-pt-0ut" secondAttribute="bottom" id="DeA-cQ-bTP"/>
+                            <constraint firstItem="pfK-Lm-fAa" firstAttribute="top" secondItem="9e3-Pv-mDg" secondAttribute="top" id="Uhk-hk-ezz"/>
+                            <constraint firstAttribute="trailing" secondItem="pfK-Lm-fAa" secondAttribute="trailing" id="X2t-Bp-ZL7"/>
+                            <constraint firstAttribute="bottom" secondItem="pfK-Lm-fAa" secondAttribute="bottom" id="bae-RC-97z"/>
                             <constraint firstItem="HwM-Ta-z7b" firstAttribute="leading" secondItem="1dZ-pt-0ut" secondAttribute="leading" id="i2M-Nm-LS1"/>
                             <constraint firstItem="HwM-Ta-z7b" firstAttribute="top" secondItem="1dZ-pt-0ut" secondAttribute="top" id="vc9-yq-7I1"/>
                         </constraints>

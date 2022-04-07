@@ -15,7 +15,7 @@ class RecipesViewController: UIViewController {
     var useRepository: Bool = true
     private let repository = FavoriteRecipeRepository()
 
-    // MARK: - Life Cycle
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,6 @@ class RecipesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         if useRepository {
             // pass correct data to recipes in case we display favorites :
             recipes = repository.getRecipes()
@@ -77,12 +76,17 @@ extension RecipesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
+        goToRecipeDetailViewController(with: recipes[indexPath.row])
+    }
+
+    private func goToRecipeDetailViewController(with recipe: RecipeFormated) {
         guard let recipeDetailViewController = self.storyboard?.instantiateViewController(identifier: "RecipeDetailViewController") as? RecipeDetailViewController else {
             return
         }
-        recipeDetailViewController.recipeFormated = recipes[indexPath.row]
+        recipeDetailViewController.recipeFormated = recipe
         self.navigationController?.pushViewController(recipeDetailViewController, animated: true)
     }
+
 }
 
 

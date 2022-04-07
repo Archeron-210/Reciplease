@@ -16,16 +16,16 @@ class RecipeDetailViewController: UIViewController {
     // MARK: - Properties
 
     private let repository = FavoriteRecipeRepository()
-
+    private let aspectSetter = AspectSetting()
     var recipeFormated: RecipeFormated?
 
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setInterfaceAspect()
-        setTextViewAspect()
+        aspectSetter.setButtonAspect(for: getDirectionsButton)
+        aspectSetter.setStackViewAspect(for: servsAndTimeStackView)
+        aspectSetter.setTextViewAspect(for: ingredientListTextView)
         displayRecipeInfo()
         setFavoriteIcon()
     }
@@ -36,6 +36,7 @@ class RecipeDetailViewController: UIViewController {
     }
 
     // MARK: - Actions
+
     @IBAction func getDirectionsButtonTapped(_ sender: UIButton) {
         goToWebsite()
     }
@@ -51,9 +52,9 @@ class RecipeDetailViewController: UIViewController {
             return
         }
         if let imageUrl = recipe.imageUrl {
-            recipePicture.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "default pic"))
+            recipePicture.af.setImage(withURL: imageUrl, placeholderImage: Assets.defaultPic.image)
         } else {
-            recipePicture.image = UIImage(named: "default pic")
+            recipePicture.image = Assets.defaultPic.image
         }
         servingsLabel.text = recipe.formatedServings
         timeLabel.text = recipe.formatedTotalTime
@@ -86,7 +87,7 @@ class RecipeDetailViewController: UIViewController {
     // MARK: - Alert
 
     private func urlErrorAlert() {
-        let alert = UIAlertController(title: "⚠️", message: "Sorry, it seems like this recipe URL is broken 🔌", preferredStyle: .alert)
+        let alert = UIAlertController(title: "⚠︎", message: "Sorry, it seems like this recipe URL is broken 🔌", preferredStyle: .alert)
         let actionAlert = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(actionAlert)
         present(alert, animated: true, completion: nil)
@@ -96,28 +97,12 @@ class RecipeDetailViewController: UIViewController {
 
     private func setFavoriteIcon() {
         guard let recipe = recipeFormated else {
-            favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+            favoriteButton.setImage(Assets.star.systemIcon, for: .normal)
             return
         }
 
         let isFavorite = repository.isFavorite(recipe: recipe)
-        let icon = isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+        let icon = isFavorite ? Assets.starFill.systemIcon : Assets.star.systemIcon
         favoriteButton.setImage(icon, for: .normal)
-    }
-
-    private func setInterfaceAspect() {
-        getDirectionsButton.layer.cornerRadius = 10
-        getDirectionsButton.layer.borderWidth = 0.5
-        getDirectionsButton.layer.borderColor = UIColor.white.cgColor
-        servsAndTimeStackView.layer.cornerRadius = 5.0
-        servsAndTimeStackView.layer.borderWidth = 0.5
-        servsAndTimeStackView.layer.borderColor = UIColor.white.cgColor
-    }
-
-    private func setTextViewAspect() {
-        ingredientListTextView.backgroundColor = UIColor.clear
-        ingredientListTextView.layer.cornerRadius = 10
-        ingredientListTextView.layer.borderWidth = 0.5
-        ingredientListTextView.layer.borderColor = UIColor.white.cgColor
     }
 }

@@ -4,7 +4,6 @@ import UIKit
 
 extension UITextField {
     func setBottomBorderAndPlaceholderTextColor() {
-
         // sets the border :
         let bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0, y: self.frame.size.height - 1, width: self.frame.size.width, height: 1)

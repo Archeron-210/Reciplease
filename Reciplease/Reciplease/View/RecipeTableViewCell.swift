@@ -14,7 +14,8 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var ingredientDetailsLabel: UILabel!
 
-    // MARK: - Life Cycle
+    // MARK: - Lifecycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setAspect()
@@ -35,9 +36,9 @@ class RecipeTableViewCell: UITableViewCell {
     private func setImage(for recipe: RecipeFormated) {
         // image setting using AlamofireImage, with a placeholderImage :
         if let imageUrl = recipe.imageUrl {
-            recipeImageView.af.setImage(withURL: imageUrl, placeholderImage: UIImage(named: "default pic"))
+            recipeImageView.af.setImage(withURL: imageUrl, placeholderImage: Assets.defaultPic.image)
         } else {
-            recipeImageView.image = UIImage(named: "default pic")
+            recipeImageView.image = Assets.defaultPic.image
         }
     }
 
